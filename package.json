@@ -10,6 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": ".luizhp",
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.4.2"
+  }
 }
