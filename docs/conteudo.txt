@@ -1,3 +1,5 @@
+https://www.udemy.com/course/tdd-com-mango
+
 Seção 1: Introdução
 
 01 - Source Code:
@@ -9,6 +11,8 @@ Seção 1: Introdução
 03 - Configurando as dependências:
      01-03-dependencias.txt
 
+04 - Clean Architecture
+     https://www.udemy.com/course/tdd-com-mango/learn/lecture/17664692
 
 
 
