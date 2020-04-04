@@ -17,3 +17,4 @@ URLs:
 https://www.conventionalcommits.org
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
 https://www.npmjs.com/package/git-commit-msg-linter
+https://node.green/

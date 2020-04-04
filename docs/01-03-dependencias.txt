@@ -2,7 +2,7 @@
 npm init -y
 -y => configurações default
 
-Padronização de commits:
+1) Padronização de commits:
 
 https://www.conventionalcommits.org
 A especificação do Conventional Commits é uma convenção simples para utilizar nas mensagens de commit.
@@ -18,5 +18,22 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    A git "commit-msg" hook for linting your git commit message against the Angular Commit Message Guidelines.
    As a hook it will run at every commiting to make sure that the message to commit is valid against the conventions. 
 
-   npm i -D git-commit-msg-linter
+   Inserir biblioteca:
+      npm i -D git-commit-msg-linter
 
+2) typescript @types/node
+
+   Inserir biblioteca:
+      npm i -D typescript @types/node
+
+3) criar tsconfig.json
+
+   criar automaticamente com tsc --init
+   "outDir": "./dist"
+   "module": "commonjs"
+   "target": "es2020"
+   "esModuleInterop": true
+   "allowJs": true
+
+   Suporte do node para recursos de cada versão do ECMASCRIPT
+   https://node.green/
