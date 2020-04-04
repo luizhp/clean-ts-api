@@ -1,0 +1,19 @@
+Seção 1: Introdução
+
+01 - Source Code:
+     https://github.com/rmanguinho/clean-ts-api
+     
+02 - Configurando o git:
+     01-02-git.txt
+
+03 - Configurando as dependências:
+     01-03-dependencias.txt
+
+
+
+
+-----------------
+URLs:
+https://www.conventionalcommits.org
+https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
+https://www.npmjs.com/package/git-commit-msg-linter

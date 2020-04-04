@@ -1,0 +1,22 @@
+
+npm init -y
+-y => configurações default
+
+Padronização de commits:
+
+https://www.conventionalcommits.org
+A especificação do Conventional Commits é uma convenção simples para utilizar nas mensagens de commit.
+Ela define um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
+
+https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
+We have very precise rules over how our git commit messages can be formatted.
+This leads to more readable messages that are easy to follow when looking through the project history.
+But also, we use the git commit messages to generate the Angular change log.
+
+Biblioteca para forçar que a convenção do texto no commit seja seguido:
+   https://www.npmjs.com/package/git-commit-msg-linter
+   A git "commit-msg" hook for linting your git commit message against the Angular Commit Message Guidelines.
+   As a hook it will run at every commiting to make sure that the message to commit is valid against the conventions. 
+
+   npm i -D git-commit-msg-linter
+
