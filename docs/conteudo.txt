@@ -24,3 +24,5 @@ https://github.com/standard/eslint-config-standard-with-typescript
 https://www.npmjs.com/package/eslint-config-standard-with-typescript
 https://eslint.org/
 https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+https://www.npmjs.com/package/husky
+https://www.npmjs.com/package/lint-staged

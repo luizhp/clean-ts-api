@@ -54,7 +54,6 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    (plugin do standardjs serve para projetos somente em js - caso tenha plugin standardjs desabilitar e deixar somente o eslint)
 
    criar o arquivo .eslintrc.json na pasta raiz e adicionar:
-
    {
        "extends": "standard-with-typescript",
        "parserOptions": {
@@ -85,3 +84,44 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
      node_modules
      dist
 
+-------------------------------------------------
+-- Validação de modificações antes de commit/push
+   lint-staged + husky
+
+5) lint-staged
+   Run linters against staged git files and don't let 💩 slip into your code base!
+   https://www.npmjs.com/package/lint-staged
+
+   Roda junto com o husky para acelerar o processo de validação.
+   Permite que rode scripts somente para arquivos que estão na área de stage do git
+   (somente os que foram modificados e passaram pelo git add)
+   Para não ter que rodar em todos os arquivos do projeto. Somente os que foram modificados e estão na stage.
+
+   Instalar:
+   npm i -D lint-staged
+
+   Configurar criando arquivo na pasta raiz .lintstagedrc.json e adicionar:
+   {
+     "*.ts": [
+       "eslint 'src/**' --fix",
+       "git add"
+     ]
+   }
+
+6) husky
+   Husky can prevent bad git commit, git push and more 🐶 woof!
+   https://www.npmjs.com/package/husky
+
+   Previne que commits ou pushs sejam feitos ao executar comandos de validação do código.
+
+   Instalar:
+   npm i -D husky
+
+   Configurar criando arquivo na raiz .huskyrc.json e adicionar:
+   {
+     "hooks": {
+       "pre-commit": "lint-staged"
+     }
+   }
+
+-------------------------------------------------
