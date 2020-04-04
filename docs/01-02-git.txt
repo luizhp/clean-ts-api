@@ -39,3 +39,22 @@ git config --local --list
    
 Git Pretty Formats:
 https://git-scm.com/docs/pretty-formats
+
+
+-----------------
+Commitar mais alterações ao commit anterior
+git add .
+git commit --amend --no-edit
+
+ou adicionar arquivo/modificação em commit anterior
+(https://stackoverflow.com/a/2719636/5604238)
+1. Use "git stash" to store the changes you want to add.
+2. Use "git rebase -i HEAD~10" se quero ver 4 commits para trás, coloco HEAD~4, respeitando a quantidade de commits existentes
+3. Na linha do commit desejada (a0865...) para editar mudo a palavra pick, no começo da linha, por edit. Não modificar mais nenhuma outra linha
+4. Gravar e sair de volta para o shell. Ele trouxe o commit de volta para edição
+5. Pop the stash by using "git stash pop"
+6. Add your file with "git add <file>"
+7. Amend the commit with "git commit --amend --no-edit"
+8. Do a "git rebase --continue" which will rewrite the rest of your commits against the new one.
+9. Caso precise repita do passo 2 em diante se marcou mais de um commit para edição.
+

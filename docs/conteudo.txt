@@ -14,7 +14,13 @@ Seção 1: Introdução
 
 -----------------
 URLs:
+https://git-scm.com/docs/pretty-formats
 https://www.conventionalcommits.org
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
 https://www.npmjs.com/package/git-commit-msg-linter
 https://node.green/
+https://standardjs.com/
+https://github.com/standard/eslint-config-standard-with-typescript
+https://www.npmjs.com/package/eslint-config-standard-with-typescript
+https://eslint.org/
+https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint

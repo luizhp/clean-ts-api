@@ -35,5 +35,53 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    "esModuleInterop": true
    "allowJs": true
 
-   Suporte do node para recursos de cada versão do ECMASCRIPT
+   Suporte do node para recursos de cada versão do ECMASCRIPT (vide target)
    https://node.green/
+
+4) linter
+
+   Apresentação da página - Definição de padrões JS
+   https://standardjs.com/
+
+   https://github.com/standard/eslint-config-standard-with-typescript
+   https://www.npmjs.com/package/eslint-config-standard-with-typescript
+
+   Instalar plugins typescript+eslint+standard:
+   npm install --save-dev eslint@6 eslint-plugin-standard@4 eslint-plugin-promise@4 eslint-plugin-import@2 eslint-plugin-node@11 @typescript-eslint/eslint-plugin@2 eslint-config-standard-with-typescript
+
+   habilitar no VSCODE: VS Code ESLint extension
+   https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+   (plugin do standardjs serve para projetos somente em js - caso tenha plugin standardjs desabilitar e deixar somente o eslint)
+
+   criar o arquivo .eslintrc.json na pasta raiz e adicionar:
+
+   {
+       "extends": "standard-with-typescript",
+       "parserOptions": {
+           "project": "./tsconfig.json"
+       }
+   }
+
+   Para testar se está ativo a checagem do eslint,
+   foi criado um arquivo temporário
+   test.ts com o seguinte conteúdo:
+   
+   function teste() {
+       return 1;
+   }
+
+   e depois de alguns ajustes acabou se tornando:
+   
+   function teste (): number {
+     return 1
+   }
+
+   teste()
+
+   provando assim que a checagem estava ativa
+
+   . Criado o arquivo .eslintignore com as pastas para que o eslint ignore
+     docs
+     node_modules
+     dist
+
