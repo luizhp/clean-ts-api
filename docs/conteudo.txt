@@ -26,3 +26,5 @@ https://eslint.org/
 https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 https://www.npmjs.com/package/husky
 https://www.npmjs.com/package/lint-staged
+https://www.npmjs.com/package/jest
+https://jestjs.io/

@@ -104,7 +104,7 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    {
      "*.ts": [
        "eslint 'src/**' --fix",
-       "git add"
+       "npm run test:staged" (>> adicionar depois de instalar o jest)
      ]
    }
 
@@ -125,3 +125,52 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    }
 
 -------------------------------------------------
+7) Jest
+   Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+   Teste unitário
+
+   https://www.npmjs.com/package/jest
+   https://jestjs.io/
+
+   Instalar:
+   npm i -D jest @types/jest ts-jest
+
+   Setup (no shell):
+   > sudo npm i -g jest
+   > jest --init
+     ✔ Would you like to use Jest when running "test" script in "package.json"? … yes
+     ✔ Choose the test environment that will be used for testing › node
+     ✔ Do you want Jest to add coverage reports? … yes
+     ✔ Automatically clear mock calls and instances between every test? … no
+
+   Editar arquivo de setup jest.config.js:
+   module.exports = {
+       collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+       coverageDirectory: 'coverage',
+       roots: ['<rootDir>/src'],
+       testEnvironment: 'node',
+       transform: {
+         '.+\\.ts$': 'ts-jest'
+       }
+   }
+
+   Adicionar entrada em .lintstagedrc.json:
+     "npm run test:staged"
+   No package.json, adcionar a entrada test:staged:
+     "scripts": {
+       "test": "jest",
+       "test:staged": "jest"
+     },
+
+   jest = mocha + chai + instabul
+   (roda os testes, faz os asserts, tem o coverage, fácil de configurar, boa documentação)
+
+   Testando se o jest está ativo no projeto:
+   ------------------------------------------
+   1. criar o arquivo em src/controller.spec.ts, com o seguinte conteúdo:
+      describe('Description', () => {
+        it('Test', () => {
+          expect(1).toBe(1)
+        })
+      })
+   2. rodar no shell npm test (executa o script definido no package.json)
