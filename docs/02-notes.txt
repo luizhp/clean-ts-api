@@ -35,3 +35,66 @@
    Não é um conceito simples de entender pra quem não conhece orientação a objetos, mas depois que você entende é bem fácil.
    Te aconselho a estudar sobre isso em paralelo, pois esses conceitos são muito importantes.
    Geralmente quem vem de linguagens como c# ou Java já está acostumado com esse tipo de coisa.
+
+3) What's the difference between faking, mocking, and stubbing?
+   
+   https://stackoverflow.com/a/5180286/5604238
+   Stub - an object that provides predefined answers to method calls.
+   Mock - an object on which you set expectations.
+   Fake - an object with limited capabilities (for the purposes of testing), e.g. a fake web service.
+   Test Double is the general term for stubs, mocks and fakes. But informally, you'll often hear people simply call them mocks.
+   Canned answer - An explicit value, rather than a value that is calculated
+
+
+   https://stackoverflow.com/a/33333064/5604238
+   based on Roy Osherove's "The Art of Unit Testing".
+   A stub is a controllable replacement for an existing dependency (or collaborator) in the system.
+   By using a stub, you can test your code without dealing with the dependency directly.
+   
+   And defines the difference between stubs and mocks as:
+   The main thing to remember about mocks versus stubs is that mocks are just like stubs,
+   but you assert against the mock object, whereas you do not assert against a stub.
+   
+   Fake is just the name used for both stubs and mocks. For example when you don't care about the distinction between stubs and mocks.
+
+
+   https://stackoverflow.com/a/55030455/5604238
+   Fakes
+   A fake is an implementation that behaves "naturally", but is not "real".
+   These are fuzzy concepts and so different people have different understandings of what makes things a fake.
+   One example of a fake is an in-memory database (e.g. using sqlite with the :memory: store).
+   You would never use this for production (since the data is not persisted),
+   but it's perfectly adequate as a database to use in a testing environment.
+   It's also much more lightweight than a "real" database.
+   As another example, perhaps you use some kind of object store (e.g. Amazon S3) in production, but in a test
+   you can simply save objects to files on disk; then your "save to disk" implementation would be a fake.
+   (Or you could even fake the "save to disk" operation by using an in-memory filesystem instead.)
+   As a third example, imagine an object that provides a cache API; an object that implements the correct
+   interface but that simply performs no caching at all but always returns a cache miss would be a kind of fake.
+   The purpose of a fake is not to affect the behavior of the system under test, but rather to simplify the
+   implementation of the test (by removing unnecessary or heavyweight dependencies).
+   
+   Stubs
+   A stub is an implementation that behaves "unnaturally".
+   It is preconfigured (usually by the test set-up) to respond to specific inputs with specific outputs.
+   The purpose of a stub is to get your system under test into a specific state.
+   For example, if you are writing a test for some code that interacts with a REST API, you could stub out the
+   REST API with an API that always returns a canned response, or that responds to an API request with a specific error.
+   This way you could write tests that make assertions about how the system reacts to these states;
+   for example, testing the response your users get if the API returns a 404 error.
+   A stub is usually implemented to only respond to the exact interactions you've told it to respond to.
+   But the key feature that makes something a stub is its purpose: a stub is all about setting up your test case.
+   
+   Mocks
+   A mock is similar to a stub, but with verification added in. The purpose of a mock is to make assertions about how
+   your system under test interacted with the dependency.
+   For example, if you are writing a test for a system that uploads files to a website, you could build a mock that
+   accepts a file and that you can use to assert that the uploaded file was correct. Or, on a smaller scale, it's
+   common to use a mock of an object to verify that the system under test calls specific methods of the mocked object.
+   Mocks are tied to interaction testing, which is a specific testing methodology. People who prefer to test system
+   state rather than system interactions will use mocks sparingly if at all.
+   
+   Test doubles
+   Fakes, stubs, and mocks all belong to the category of test doubles. A test double is any object or system you use
+   in a test instead of something else. Most automated software testing involves the use of test doubles of some kind
+   or another. Some other kinds of test doubles include dummy values, spies, and I/O blackholes.

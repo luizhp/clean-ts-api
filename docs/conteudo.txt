@@ -25,6 +25,9 @@ Seção 2: SignUp API - Presentation Layer
 06 - Criando erros personalizados
      02-notes.txt
 
+07 - Utilizando Mocks da maneira correta
+     02-notes.txt
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats
