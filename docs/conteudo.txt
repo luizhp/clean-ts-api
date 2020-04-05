@@ -28,6 +28,8 @@ Seção 2: SignUp API - Presentation Layer
 07 - Utilizando Mocks da maneira correta
      02-notes.txt
 
+08 - Testando exceções e integrando com o EmailValidator
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats
