@@ -1,5 +1,6 @@
 https://www.udemy.com/course/tdd-com-mango
 
+
 Seção 1: Introdução
 
 01 - Source Code:
@@ -15,6 +16,7 @@ Seção 1: Introdução
      clean-architecture-diagram-signup.png
      https://www.udemy.com/course/tdd-com-mango/learn/lecture/17664692
      https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
 
 Seção 2: SignUp API - Presentation Layer
 
@@ -32,6 +34,12 @@ Seção 2: SignUp API - Presentation Layer
 
 09 - Integrando com o AddAccount Usecase
 
+
+Seção 3: Jest
+
+10 - Configurando o Jest e criando scripts de test
+     03-notes.txt
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats
@@ -48,3 +56,4 @@ https://www.npmjs.com/package/husky
 https://www.npmjs.com/package/lint-staged
 https://www.npmjs.com/package/jest
 https://jestjs.io/
+https://jestjs.io/docs/en/cli.html

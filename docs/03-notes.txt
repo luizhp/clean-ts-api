@@ -1,0 +1,77 @@
+1) Novos tipos de teste para o Jest modificando o arquivo package.json
+   onde na propriedade scripts, foram adicionados algumas novas propriedades e novos parâmetros
+
+   "scripts": {
+     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
+     "test:verbose": "jest --passWithNoTests",
+     "test:unit": "npm test -- --watch -c jest-unit-config.js",
+     "test:integration": "npm test -- --watch -c jest-integration-config.js",
+     "test:staged": "npm test -- --findRelatedTests",
+     "test:ci": "npm test -- --coverage"
+   }
+
+   ! Ao gerar a pasta "coverage", evitar que seja validada ou carregada para o git:
+     inserir a pasta coverage nos arquivos .gitignore e .eslintignore
+
+   Referência parâmetros: https://jestjs.io/docs/en/cli.html
+
+   --passWithNoTests
+     Allows the test suite to pass when no files are found
+
+   --silent
+     Prevent tests from printing messages through the console.
+
+   --noStackTrace
+     Disables stack trace in test results output.
+
+   --watch
+     Watch files for changes and rerun tests related to changed files.
+
+   -c
+     Alias: -c (--config)
+     The path to a Jest config file specifying how to find and execute tests.
+     If no rootDir is set in the config, the directory containing the config file is
+     assumed to be the rootDir for the project.
+     This can also be a JSON-encoded value which Jest will use as configuration.
+
+     Para o arquivo de configuração de uso do Jest, para o script test:unit
+     foi criado o arquivo: jest-unit-config.js
+        const config = require('./jest.config')
+        config.testMatch = ['**/*.spec.ts']
+        module.exports = config
+     
+     Para o arquivo de configuração de uso do Jest, para o script test:integration
+     foi criado o arquivo: jest-integration-config.js
+        const config = require('./jest.config')
+        config.testMatch = ['**/*.test.ts']
+        module.exports = config
+
+     Caso esse parâmetro não seja informado com o arquivo de configuração, por padrão ele
+     roda o arquivo jest.config.js
+
+   --findRelatedTests <spaceSeparatedListOfSourceFiles>
+     Permite que seja rodado os testes do arquivos relacionados ao que apenas foi modificado
+     Find and run the tests that cover a space separated list of source files that were passed in as arguments.
+     Useful for pre-commit hook integration to run the minimal amount of tests necessary.
+     Can be used together with --coverage to include a test coverage for the source files, no duplicate --collectCoverageFrom arguments needed.
+
+   --coverage[=<boolean>]
+     Gera a cobertura de testes do nosso projeto para identificar quais arquivos foram cobertos pelos testes
+     Alias: --collectCoverage.
+     Indicates that test coverage information should be collected and reported in the output.
+     Optionally pass <boolean> to override option set in configuration.
+
+   --runInBand
+     Roda os testes em forma sequencial.
+     Exemplo: Testes de inserção/deleção em banco de dados, podem ter problemas caso não seja sequencial.
+     Alias: -i.
+     Run all tests serially in the current process, rather than creating a
+     worker pool of child processes that run tests.
+     This can be useful for debugging.
+
+2) Husky
+
+     Adicionado ao arquivo .huskyrc.json a entrada: "pre-push": "npm run test:ci"
+
+     Objetivo: para que antes do push acontecer, o teste completo é feito
+               certificando que o push está com a cobertura de testes em 100%
