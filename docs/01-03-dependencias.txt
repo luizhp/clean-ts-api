@@ -158,8 +158,8 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
      "npm run test:staged"
    No package.json, adcionar a entrada test:staged:
      "scripts": {
-       "test": "jest",
-       "test:staged": "jest"
+       "test": "jest --passWithNoTests --watch",
+       "test:staged": "jest --passWithNoTests"
      },
 
    jest = mocha + chai + instabul

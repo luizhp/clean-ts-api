@@ -1,0 +1,14 @@
+
+1) Desabilitar regra do ESLint para quando não permitir !
+      if (!httpRequest.body.name)
+
+   a) Copiar expressão da mensagem de erro:
+      @typescript-eslint/strict-boolean-expressions
+
+   b) abrir arquivo .eslintrc.json e adicionar
+      "rules": {
+        "@typescript-eslint/strict-boolean-expressions": "off"
+      }
+
+   https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+

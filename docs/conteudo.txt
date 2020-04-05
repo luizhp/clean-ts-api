@@ -12,9 +12,14 @@ Seção 1: Introdução
      01-03-dependencias.txt
 
 04 - Clean Architecture
+     clean-architecture-diagram-signup.png
      https://www.udemy.com/course/tdd-com-mango/learn/lecture/17664692
 
+Seção 2: SignUp API - Presentation Layer
 
+05 - Criando o SignUpController e validando o request
+     02-notes.txt
+     clean-architecture-diagram-signup.pdf
 
 -----------------
 URLs:
