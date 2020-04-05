@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests",
+    "test:staged": "jest --passWithNoTests"
   },
   "keywords": [],
   "author": ".luizhp",
