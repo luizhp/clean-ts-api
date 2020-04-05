@@ -22,6 +22,9 @@ Seção 2: SignUp API - Presentation Layer
      02-notes.txt
      clean-architecture-diagram-signup.pdf
 
+06 - Criando erros personalizados
+     02-notes.txt
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats

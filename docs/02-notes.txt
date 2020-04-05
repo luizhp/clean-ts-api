@@ -12,3 +12,26 @@
 
    https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
 
+2) https://www.udemy.com/course/tdd-com-mango/learn/lecture/17670136#questions/9384203
+   Costumamos chamar interface de contrato (ou protocolo).
+   A ideia é que: se uma classe implementa uma interface ela precisa implementar todos os métodos (funções) que foram definidos naquela interface.
+   Nesse exemplo a interface Controller tem o método handle.
+   
+   É diferente do conceito de struct. Struct é similar a uma classe, mas geralmente não colocamos métodos nelas.
+   Por exemplo uma classe que apenas representa um User, com campos name, age, phone.
+   Isso poderia ser uma struct já que só tem dados, não tem nenhuma função.
+   
+   A ideia da interface é você garantir que uma classe vai ter um comportamento que você espera.
+   
+   Não sei se você entende de orientação a objetos, mas geralmente quando programamos com classes temos o hábito de criar classes bases.
+   Por exemplo um ControllerBase, que teria métodos genéricos que são usados em muitos controllers.
+   Então fazemos todos os controllers herdarem dessa classe base. Isso é muito prático, mas é uma má prática.
+   Geralmente quando fazemos isso acabamos colocando coisas que alguns controllers precisam, mas outros não.
+   Então você acaba "inflando" suas classes com métodos que ela nem vai usar.
+   Com as interfaces resolvemos esse problema.
+   Ao invés de você criar uma classe base com vários métodos, criamos várias interfaces específicas e uma classe pode implementar
+   várias interfaces (apenas as que fazem sentido pra ela).
+   
+   Não é um conceito simples de entender pra quem não conhece orientação a objetos, mas depois que você entende é bem fácil.
+   Te aconselho a estudar sobre isso em paralelo, pois esses conceitos são muito importantes.
+   Geralmente quem vem de linguagens como c# ou Java já está acostumado com esse tipo de coisa.
