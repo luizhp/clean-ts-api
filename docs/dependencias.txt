@@ -1,3 +1,5 @@
+***********************************************
+Seção 1, Aula 3 - Configurando as dependências:
 
 npm init -y
 -y => configurações default
@@ -174,3 +176,15 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
         })
       })
    2. rodar no shell npm test (executa o script definido no package.json)
+
+
+***********************************************
+Seção 4, Aula 11 - Criando o EmailValidatorAdapter e mockando o validator
+
+1) Instalando a biblioteca Validator
+
+   https://www.npmjs.com/package/validator
+   A library of string validators and sanitizers.
+
+   npm install --save validator
+   npm install -D @types/validator

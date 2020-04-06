@@ -10,7 +10,7 @@ Seção 1: Introdução
      01-02-git.txt
 
 03 - Configurando as dependências:
-     01-03-dependencias.txt
+     dependencias.txt
 
 04 - Clean Architecture
      clean-architecture-diagram-signup.png
@@ -40,6 +40,11 @@ Seção 3: Jest
 10 - Configurando o Jest e criando scripts de test
      03-notes.txt
 
+Seção 4: Utils Layer
+
+11 - Criando o EmailValidatorAdapter e mockando o validator
+     dependencias.txt
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats
@@ -57,3 +62,4 @@ https://www.npmjs.com/package/lint-staged
 https://www.npmjs.com/package/jest
 https://jestjs.io/
 https://jestjs.io/docs/en/cli.html
+https://www.npmjs.com/package/validator
