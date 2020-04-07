@@ -45,6 +45,9 @@ Seção 4: Utils Layer
 11 - Criando o EmailValidatorAdapter e mockando o validator
      dependencias.txt
 
+12 - Criando o DbAddAccount e Integrando com o Encrypter
+
+
 -----------------
 URLs:
 https://git-scm.com/docs/pretty-formats
