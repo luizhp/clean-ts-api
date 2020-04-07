@@ -45,26 +45,33 @@ Seção 4: Utils Layer
 11 - Criando o EmailValidatorAdapter e mockando o validator
      dependencias.txt
 
+Seção 5: SignUp API - Data Layer
+
 12 - Criando o DbAddAccount e Integrando com o Encrypter
 
 13 - Integrando com o AddAccountRepository
 
+Seção 6: SignUp API - Infra Layer
+
+14 - Criando o BcryptAdapter e mockando o bcrypt
+     dependencias.txt
 
 -----------------
 URLs:
-https://git-scm.com/docs/pretty-formats
-https://www.conventionalcommits.org
-https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
-https://www.npmjs.com/package/git-commit-msg-linter
-https://node.green/
-https://standardjs.com/
-https://github.com/standard/eslint-config-standard-with-typescript
-https://www.npmjs.com/package/eslint-config-standard-with-typescript
-https://eslint.org/
-https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-https://www.npmjs.com/package/husky
-https://www.npmjs.com/package/lint-staged
-https://www.npmjs.com/package/jest
-https://jestjs.io/
-https://jestjs.io/docs/en/cli.html
-https://www.npmjs.com/package/validator
+  https://git-scm.com/docs/pretty-formats
+  https://www.conventionalcommits.org
+  https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
+  https://www.npmjs.com/package/git-commit-msg-linter
+  https://node.green/
+  https://standardjs.com/
+  https://github.com/standard/eslint-config-standard-with-typescript
+  https://www.npmjs.com/package/eslint-config-standard-with-typescript
+  https://eslint.org/
+  https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  https://www.npmjs.com/package/husky
+  https://www.npmjs.com/package/lint-staged
+  https://www.npmjs.com/package/jest
+  https://jestjs.io/
+  https://jestjs.io/docs/en/cli.html
+  https://www.npmjs.com/package/validator
+  https://www.npmjs.com/package/bcrypt

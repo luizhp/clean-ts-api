@@ -188,3 +188,12 @@ Seção 4, Aula 11 - Criando o EmailValidatorAdapter e mockando o validator
 
    npm install --save validator
    npm install -D @types/validator
+
+***********************************************
+Seção 6, Aula 14 - Criando o BcryptAdapter e mockando o bcrypt
+
+1) Bcrypt
+   https://www.npmjs.com/package/bcrypt
+
+   npm install --save bcrypt
+   npm install -D @types/bcrypt
