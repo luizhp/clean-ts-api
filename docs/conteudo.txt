@@ -47,6 +47,8 @@ Seção 4: Utils Layer
 
 12 - Criando o DbAddAccount e Integrando com o Encrypter
 
+13 - Integrando com o AddAccountRepository
+
 
 -----------------
 URLs:
