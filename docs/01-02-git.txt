@@ -58,3 +58,17 @@ ou adicionar arquivo/modificação em commit anterior
 8. Do a "git rebase --continue" which will rewrite the rest of your commits against the new one.
 9. Caso precise repita do passo 2 em diante se marcou mais de um commit para edição.
 
+-------------------
+git stash
+
+  Aula 15, 19:51 (https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717494#questions)
+
+  Esconde um arquivo incompleto e que pode causar 
+    1. git add <<arquivos - completos e incompletos>>
+    2. git stash push <<arquivo(s) incompletos>>
+       esconde arquivos para poder fazer commit sem bloqueio da validação
+    3. git commit ...
+    4. git stash list
+       lista stashs
+    5. git stash pop
+       recupera arquivos

@@ -197,3 +197,20 @@ Seção 6, Aula 14 - Criando o BcryptAdapter e mockando o bcrypt
 
    npm install --save bcrypt
    npm install -D @types/bcrypt
+
+***********************************************
+Seção 6, Aula 15 - Configurando MongoDb em memória
+
+1) jest-mongodb
+   https://jestjs.io/docs/en/mongodb
+   https://github.com/shelfio/jest-mongodb
+   https://www.npmjs.com/package/@shelf/jest-mongodb
+
+   npm install -D @shelf/jest-mongodb @types/mongodb
+
+2) mongodb
+   https://www.mongodb.com/
+   https://github.com/mongodb/node-mongodb-native
+   https://www.npmjs.com/package/mongodb
+
+   npm install --save mongodb
