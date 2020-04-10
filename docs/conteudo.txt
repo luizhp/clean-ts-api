@@ -72,6 +72,12 @@ Seção 7: SignUp API - Main Layer
 
 19 - Fazendo a composição do SignUp e desacoplando do express
 
+Seção 8: Bônus
+
+20 - Testando a conexão com o MongoDb
+
+21 - Aplicando o Design Pattern Decorator
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
