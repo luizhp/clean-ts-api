@@ -72,3 +72,15 @@ git stash
        lista stashs
     5. git stash pop
        recupera arquivos
+
+-------------------
+remover arquivos de commit que foram incluídos sem querer
+  https://stackoverflow.com/a/15321456/5604238
+
+Traz de volta à stage todos os arquivos previamente comitados e volta ao commit anterior
+  git reset --soft HEAD~1
+Then reset the unwanted files in order to leave them out from the commit:
+  git reset HEAD path/to/unwanted_file
+Now commit again, you can even re-use the same commit message:
+  git commit -c ORIG_HEAD
+

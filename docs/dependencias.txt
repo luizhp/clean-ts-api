@@ -214,3 +214,38 @@ Seção 6, Aula 15 - Configurando MongoDb em memória
    https://www.npmjs.com/package/mongodb
 
    npm install --save mongodb
+
+***********************************************
+Seção 7, Aula 17 - Testando middlewares do express
+
+1) express
+   https://www.npmjs.com/package/express
+   http://expressjs.com/
+   https://github.com/expressjs/express
+
+   npm install --save express
+
+   npm install -D @types/express
+
+2) sucrase
+   Sucrase is an alternative to Babel that allows super-fast development builds.
+   Instead of compiling a large range of JS features to be able to work in Internet Explorer,
+   Sucrase assumes that you're developing with a recent browser or recent Node.js version,
+   so it focuses on compiling non-standard language extensions: JSX, TypeScript, and Flow.
+   Because of this smaller scope, Sucrase can get away with an architecture that is much
+   more performant but less extensible and maintainable. Sucrase's parser is forked from
+   Babel's parser (so Sucrase is indebted to Babel and wouldn't be possible without it)
+   and trims it down to a focused subset of what Babel solves.
+   If it fits your use case, hopefully Sucrase can speed up your development experience!
+   https://sucrase.io/
+   https://github.com/alangpierce/sucrase
+   https://www.npmjs.com/package/sucrase
+
+   npm install -D sucrase
+
+3) supertest
+   Emular requisição HTTP
+   https://www.npmjs.com/package/supertest
+   https://github.com/visionmedia/supertest#readme
+
+   npm install -D supertest @types/supertest

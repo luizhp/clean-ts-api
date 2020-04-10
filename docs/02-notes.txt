@@ -113,3 +113,10 @@
 
 5) "Frameworks na INFRA ou na main"
    https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717824#questions/10029514
+
+6) Nosso MAIN layer é a camada aonde criamos as instâncias de todas as outras camadas
+   https://www.udemy.com/course/tdd-com-mango/learn/lecture/17740356#questions
+
+7) arquivos com
+   .spec -> teste unitário
+   .test -> teste integrado

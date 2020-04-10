@@ -62,6 +62,11 @@ Seção 6: SignUp API - Infra Layer
 
 16 - Testando o MongoDb
 
+Seção 7: SignUp API - Main Layer
+
+17 - Testando middlewares do express
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -83,4 +88,7 @@ URLs:
   https://www.npmjs.com/package/bcrypt
   https://www.npmjs.com/package/@shelf/jest-mongodb
   https://www.npmjs.com/package/mongodb
+  https://www.npmjs.com/package/express
+  https://www.npmjs.com/package/sucrase
+  https://www.npmjs.com/package/supertest
   
