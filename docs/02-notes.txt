@@ -98,3 +98,18 @@
    Fakes, stubs, and mocks all belong to the category of test doubles. A test double is any object or system you use
    in a test instead of something else. Most automated software testing involves the use of test doubles of some kind
    or another. Some other kinds of test doubles include dummy values, spies, and I/O blackholes.
+
+4) Diferença entre teste unitário e teste de integração
+   https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717824#questions/10012282
+
+   Teste unitário é quando você testa um componente isoladamente.
+   Se ele tiver alguma dependência a gente mocka ela.
+   
+   No teste de integração geralmente não mockamos as dependências.
+   É pra testar um componente integrado com outro pra ver se juntos eles funcionam.
+   Não necessariamente você precisa acessar um banco de dados pra ser teste de integração.
+   Qualquer teste que envolva mais de um componente já é considerado teste de integração.
+   Basta você não mockar uma dependência e deixar o componente chamar um outro e ver eles funcionando juntos.
+
+5) "Frameworks na INFRA ou na main"
+   https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717824#questions/10029514
