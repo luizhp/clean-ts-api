@@ -249,3 +249,15 @@ Seção 7, Aula 17 - Testando middlewares do express
    https://github.com/visionmedia/supertest#readme
 
    npm install -D supertest @types/supertest
+
+Seção 7, Aula 18 - Criando teste de integração para o SignUp
+
+1) fast-glob
+   This package provides methods for travel across the file system and returning pathnames that matched a defined
+   set of a specified pattern according to the rules used by the Unix Bash shell with some simplifications,
+   meanwhile results are returned in arbitrary order.
+   https://www.npmjs.com/package/fast-glob
+   https://github.com/mrmlnc/fast-glob#readme
+   https://github.com/mrmlnc/fast-glob
+
+   npm install --save fast-glob

@@ -67,6 +67,9 @@ Seção 7: SignUp API - Main Layer
 17 - Testando middlewares do express
      dependencias.txt
 
+18 - Criando teste de integração para o SignUp
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -91,4 +94,5 @@ URLs:
   https://www.npmjs.com/package/express
   https://www.npmjs.com/package/sucrase
   https://www.npmjs.com/package/supertest
+  https://www.npmjs.com/package/fast-glob
   
