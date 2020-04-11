@@ -82,6 +82,8 @@ Seção 8: Bônus
 
 23 - Refatorando os testes
 
+24 - Persistindo Log de Erro no MongoDb
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
