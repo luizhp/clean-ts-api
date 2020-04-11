@@ -84,6 +84,8 @@ Seção 8: Bônus
 
 24 - Persistindo Log de Erro no MongoDb
 
+25 - Criando Tag e fazendo Push para o GitHub
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -109,4 +111,4 @@ URLs:
   https://www.npmjs.com/package/sucrase
   https://www.npmjs.com/package/supertest
   https://www.npmjs.com/package/fast-glob
-  
+  https://git-scm.com/book/en/v2/Git-Basics-Tagging

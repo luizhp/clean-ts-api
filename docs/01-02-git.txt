@@ -36,7 +36,21 @@ git config --local --list
    git c "nome do commit" (git add e git commit)
    git l
 -----------
-   
+Exemplo .gitconfig
+
+[user]
+	name = name
+	email = mail@mail.com
+[core]
+	editor = gedit --wait
+[push]
+    followTags = true
+[alias]
+    s = !git status -s
+    c = !git add --all && git commit -m
+    l = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(green)[%cd...%cr]%Creset %C(bold blue)<%an> %n%C(bold)%s%n' --abbrev-commit --date=iso-local
+  lnp = !git --no-pager log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(green)[%cd...%cr]%Creset %C(bold blue)<%an> %n%C(bold)%s%n' --abbrev-commit --date=iso-local
+-----------------------
 Git Pretty Formats:
 https://git-scm.com/docs/pretty-formats
 
@@ -84,3 +98,38 @@ Then reset the unwanted files in order to leave them out from the commit:
 Now commit again, you can even re-use the same commit message:
   git commit -c ORIG_HEAD
 
+-------------------
+Seção 8: Bônus - Aula 25 - Criando Tag e fazendo Push para o GitHub
+
+GIT TAGs
+  https://git-scm.com/book/en/v2/Git-Basics-Tagging
+
+  Annotated tags
+    are those tags meant to be published for other developers, most probably new versions (which should also be signed).
+    Not only to see who tagged and when it was tagged, but also why (usually a changelog).
+
+    git tag -a "1.0.0" -m"1.0.0"
+  
+  Lightweight
+    are more appropriate for private use, that means tagging special commits to be able to find them again.
+    May it be to review them, check them out to test something or whatever.
+
+    git tag "1.0.0"
+
+  - Push git tags
+
+      . Envia todas tags (Annotated/Lightweight)
+          git push origin master --tags
+      
+      . Push all the refs that would be pushed without this option, and also push annotated tags in refs/tags
+        that are missing from the remote but are pointing at commit-ish that are reachable from the refs being pushed.
+          git push origin master --follow-tags
+        This can also be specified with configuration variable push.followTags
+          [push]
+             followTags = true
+
+  - Dica sobre modificação de version no arquivo package.json
+    . incrementa versão
+    . faz commit com "chore: update api version"
+    . faz tag
+    . faz push
