@@ -78,6 +78,8 @@ Seção 8: Bônus
 
 21 - Aplicando o Design Pattern Decorator
 
+22 - Adicionando Log de Erro
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
