@@ -80,6 +80,8 @@ Seção 8: Bônus
 
 22 - Adicionando Log de Erro
 
+23 - Refatorando os testes
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
