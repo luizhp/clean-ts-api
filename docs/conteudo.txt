@@ -90,6 +90,8 @@ Seção 9: Login API - Presentation Layer
 
 26 - Criando o LoginController e validando o request
 
+27 - Testando a integração do LoginController com o Authentication Usecase
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
