@@ -98,6 +98,8 @@ Seção 9: Login API - Presentation Layer
 
 30 - Aplicando o Design Pattern Composite 3/3
 
+31 - Refatorando o código
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
