@@ -96,7 +96,7 @@ Traz de volta à stage todos os arquivos previamente comitados e volta ao commit
 Then reset the unwanted files in order to leave them out from the commit:
   git reset HEAD path/to/unwanted_file
 Now commit again, you can even re-use the same commit message:
-  git commit -c ORIG_HEAD
+  git commit -c ORIG_HEAD --no-edit
 
 -------------------
 Seção 8: Bônus - Aula 25 - Criando Tag e fazendo Push para o GitHub

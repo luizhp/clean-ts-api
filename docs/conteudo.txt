@@ -104,6 +104,8 @@ Seção 10: Login API - Data Layer
 
 32 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
 
+33 - Integrando o DbAuthentication com mais 3 dependências
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
