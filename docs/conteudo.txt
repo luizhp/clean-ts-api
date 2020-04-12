@@ -100,6 +100,10 @@ Seção 9: Login API - Presentation Layer
 
 31 - Refatorando o código
 
+Seção 10: Login API - Data Layer
+
+32 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
