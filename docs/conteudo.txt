@@ -110,6 +110,10 @@ Seção 11: Bônus
 
 34 - Segurança
 
+Seção 12: Login API - Infra Layer
+
+35 - Incluindo o HashComparer ao BcryptAdapter
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
