@@ -5,14 +5,16 @@ Seção 1: Introdução
 
 01 - Source Code:
      https://github.com/rmanguinho/clean-ts-api
+
+02 - Apresentação do Projeto
      
-02 - Configurando o git:
+03 - Configurando o git:
      01-02-git.txt
 
-03 - Configurando as dependências:
+04 - Configurando as dependências:
      dependencias.txt
 
-04 - Clean Architecture
+05 - Clean Architecture
      clean-architecture-diagram-signup.png
      https://www.udemy.com/course/tdd-com-mango/learn/lecture/17664692
      https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
@@ -20,99 +22,111 @@ Seção 1: Introdução
 
 Seção 2: SignUp API - Presentation Layer
 
-05 - Criando o SignUpController e validando o request
+06 - Criando o SignUpController e validando o request
      02-notes.txt
      clean-architecture-diagram-signup.pdf
 
-06 - Criando erros personalizados
+07 - Criando erros personalizados
      02-notes.txt
 
-07 - Utilizando Mocks da maneira correta
+08 - Utilizando Mocks da maneira correta
      02-notes.txt
 
-08 - Testando exceções e integrando com o EmailValidator
+09 - Testando exceções e integrando com o EmailValidator
 
-09 - Integrando com o AddAccount Usecase
+10 - Integrando com o AddAccount Usecase
 
 
 Seção 3: Jest
 
-10 - Configurando o Jest e criando scripts de test
+11 - Configurando o Jest e criando scripts de test
      03-notes.txt
+
 
 Seção 4: Utils Layer
 
-11 - Criando o EmailValidatorAdapter e mockando o validator
+12 - Criando o EmailValidatorAdapter e mockando o validator
      dependencias.txt
+
 
 Seção 5: SignUp API - Data Layer
 
-12 - Criando o DbAddAccount e Integrando com o Encrypter
+13 - Criando o DbAddAccount e Integrando com o Encrypter
 
-13 - Integrando com o AddAccountRepository
+14 - Integrando com o AddAccountRepository
+
 
 Seção 6: SignUp API - Infra Layer
 
-14 - Criando o BcryptAdapter e mockando o bcrypt
+15 - Criando o BcryptAdapter e mockando o bcrypt
      dependencias.txt
 
-15 - Configurando MongoDb em memória
+16 - Configurando MongoDb em memória
      dependencias.txt
      01-02-git.txt (sobre git stash)
 
-16 - Testando o MongoDb
+17 - Testando o MongoDb
+
 
 Seção 7: SignUp API - Main Layer
 
-17 - Testando middlewares do express
+18 - Testando middlewares do express
      dependencias.txt
 
-18 - Criando teste de integração para o SignUp
+19 - Criando teste de integração para o SignUp
      dependencias.txt
 
-19 - Fazendo a composição do SignUp e desacoplando do express
+20 - Fazendo a composição do SignUp e desacoplando do express
+
 
 Seção 8: Bônus
 
-20 - Testando a conexão com o MongoDb
+21 - Testando a conexão com o MongoDb
 
-21 - Aplicando o Design Pattern Decorator
+22 - Aplicando o Design Pattern Decorator
 
-22 - Adicionando Log de Erro
+23 - Adicionando Log de Erro
 
-23 - Refatorando os testes
+24 - Refatorando os testes
 
-24 - Persistindo Log de Erro no MongoDb
+25 - Persistindo Log de Erro no MongoDb
 
-25 - Criando Tag e fazendo Push para o GitHub
+26 - Criando Tag e fazendo Push para o GitHub
+
 
 Seção 9: Login API - Presentation Layer
 
-26 - Criando o LoginController e validando o request
+27 - Criando o LoginController e validando o request
 
-27 - Testando a integração do LoginController com o Authentication Usecase
+28 - Testando a integração do LoginController com o Authentication Usecase
 
-28 - Aplicando o Design Pattern Composite 1/3
+29 - Aplicando o Design Pattern Composite 1/3
 
-29 - Aplicando o Design Pattern Composite 2/3
+30 - Aplicando o Design Pattern Composite 2/3
 
-30 - Aplicando o Design Pattern Composite 3/3
+31 - Aplicando o Design Pattern Composite 3/3
 
-31 - Refatorando o código
+32 - Refatorando o código
+
 
 Seção 10: Login API - Data Layer
 
-32 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
+33 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
 
-33 - Integrando o DbAuthentication com mais 3 dependências
+34 - Integrando o DbAuthentication com mais 3 dependências
+
 
 Seção 11: Bônus
 
-34 - Segurança
+35 - Segurança
+
 
 Seção 12: Login API - Infra Layer
 
-35 - Incluindo o HashComparer ao BcryptAdapter
+36 - Incluindo o HashComparer ao BcryptAdapter
+
+37 - Criando o JwtAdapter e mockando o jsonwebtoken
+     dependencias.txt
 
 -----------------
 URLs:
@@ -140,3 +154,4 @@ URLs:
   https://www.npmjs.com/package/supertest
   https://www.npmjs.com/package/fast-glob
   https://git-scm.com/book/en/v2/Git-Basics-Tagging
+  https://www.npmjs.com/package/jsonwebtoken

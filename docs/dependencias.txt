@@ -1,5 +1,5 @@
 ***********************************************
-Seção 1, Aula 3 - Configurando as dependências:
+Seção 1, Aula 4 - Configurando as dependências:
 
 npm init -y
 -y => configurações default
@@ -179,7 +179,7 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
 
 
 ***********************************************
-Seção 4, Aula 11 - Criando o EmailValidatorAdapter e mockando o validator
+Seção 4, Aula 12 - Criando o EmailValidatorAdapter e mockando o validator
 
 1) Instalando a biblioteca Validator
 
@@ -190,7 +190,7 @@ Seção 4, Aula 11 - Criando o EmailValidatorAdapter e mockando o validator
    npm install -D @types/validator
 
 ***********************************************
-Seção 6, Aula 14 - Criando o BcryptAdapter e mockando o bcrypt
+Seção 6, Aula 15 - Criando o BcryptAdapter e mockando o bcrypt
 
 1) Bcrypt
    https://www.npmjs.com/package/bcrypt
@@ -199,7 +199,7 @@ Seção 6, Aula 14 - Criando o BcryptAdapter e mockando o bcrypt
    npm install -D @types/bcrypt
 
 ***********************************************
-Seção 6, Aula 15 - Configurando MongoDb em memória
+Seção 6, Aula 16 - Configurando MongoDb em memória
 
 1) jest-mongodb
    https://jestjs.io/docs/en/mongodb
@@ -216,7 +216,7 @@ Seção 6, Aula 15 - Configurando MongoDb em memória
    npm install --save mongodb
 
 ***********************************************
-Seção 7, Aula 17 - Testando middlewares do express
+Seção 7, Aula 18 - Testando middlewares do express
 
 1) express
    https://www.npmjs.com/package/express
@@ -250,7 +250,7 @@ Seção 7, Aula 17 - Testando middlewares do express
 
    npm install -D supertest @types/supertest
 
-Seção 7, Aula 18 - Criando teste de integração para o SignUp
+Seção 7, Aula 19 - Criando teste de integração para o SignUp
 
 1) fast-glob
    This package provides methods for travel across the file system and returning pathnames that matched a defined
@@ -261,3 +261,13 @@ Seção 7, Aula 18 - Criando teste de integração para o SignUp
    https://github.com/mrmlnc/fast-glob
 
    npm install --save fast-glob
+
+Seção 12, Aula 37 - Criando o jwtAdapter e mockando com o jsonwebtoken
+
+1) jsonwebtoken
+   https://www.npmjs.com/package/jsonwebtoken
+   https://github.com/auth0/node-jsonwebtoken#readme
+   https://github.com/auth0/node-jsonwebtoken
+
+   npm install --save jsonwebtoken
+   npm install -D @types/jsonwebtoken
