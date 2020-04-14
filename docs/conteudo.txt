@@ -136,6 +136,7 @@ Seção 13: Login API - Main Layer
 
 40 - Fazendo a composição do Login
      todo: 04-middlewares.txt
+     01-02-git.txt
 
 -----------------
 URLs:

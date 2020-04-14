@@ -133,3 +133,19 @@ GIT TAGs
     . faz commit com "chore: update api version"
     . faz tag
     . faz push
+
+-------------------
+Seção 13: Login API - Main Layer - Aula: 40 - Fazendo a composição do Login
+
+   - na branch feat/login, efetuar o último commit
+   - foi dado git push origin feat/login e atualizada a branch remotamente
+   - voltar para branch master - git checkout master
+   - git merge feat/login
+   - alterada a versão do package.json { version: "1.1.0" }
+   - git commit -m"build: release 1.1.0" (se não funcionar build, vai de chore)
+   - git tag (visualizar tags)
+   - git tag -a "1.1.0" -m "1.1.0"
+   - git tag (visualizar tags e verificar que foi registrada nova tag)
+   - no config --global --edit, se a seção [push] possuir a propriedade followTags = true, ao fazer push levará os tags juntos
+   - git push origin master
+
