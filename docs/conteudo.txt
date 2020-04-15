@@ -146,6 +146,8 @@ Seção 14: Bônus
 42 - Gerando uma imagem da API com Docker
      dependencias.txt
 
+43 - Organizando as imagens e containers com Docker Compose
+     dependencias.txt
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -176,3 +178,4 @@ URLs:
   https://www.npmjs.com/package/rimraf
   https://www.heroku.com
   https://hub.docker.com/_/node
+  https://hub.docker.com/_/mongo

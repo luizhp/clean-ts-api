@@ -243,6 +243,8 @@ Seção 7, Aula 18 - Testando middlewares do express
 
    npm install -D sucrase
 
+   será desinstalado na Seção 14, Aula 43
+
 3) supertest
    Emular requisição HTTP
    https://www.npmjs.com/package/supertest
@@ -342,8 +344,7 @@ Seção 14, Aula 42 - Gerando uma imagem da API com Docker
      node
        https://hub.docker.com/_/node
 
-     criação do Dockerfile
-
+       Arquivo Dockerfile
        1. FROM node:12
           determina o node versão 12 como imagem a ser utilizada
           caso surjam upgrades/release de versão 12.x.x, esta imagem será
@@ -381,4 +382,89 @@ Seção 14, Aula 42 - Gerando uma imagem da API com Docker
     execução da imagem
       docker run -p 5000:5000 clean-node-api
 
-    (continua com a configuração do mongo)
+    (continua com a configuração do mongo - Seção 14, Aula 43)
+
+Seção 14, Aula 43 - Organizando as imagens e containers com Docker Compose
+
+1) Docker compose - docker-compose.yml
+
+   Simplificar a manipulação dos containers
+
+   mongo
+      https://hub.docker.com/_/mongo
+
+      Arquivo docker-compose.yml
+        01. version: "3"
+            versão do arquivo yml
+        02. services:
+            serviços a serem disponibilizados
+        03.   mongo:
+            nome do serviço (usado pelo dns interno do docker)
+        04.     container_name: mongo-container
+            nome do container
+        05.     image: mongo:3
+            imagem a ser baixada
+        06.     restart: always
+            quando crashar, sempre restartar
+        07.     volumes:
+            volumes a serem utilizados pelo container
+        08.       - ./data:/data/db
+            origem local / destino no container
+        09.     ports:
+            portas habilitadas
+        10.       - "27017:27017"
+            porta interna / porta exposta
+        11.   api:
+            nome do serviço (usado pelo dns interno do docker)
+        12.     container_name: api-container
+            nome do container
+        13.     build: .
+            local do arquivo Dockerfile
+        14.     image: clean-node-api
+            turnaround do docker, onde se informa a tag
+            (seria o parâmetro -t => docker build -t clean-node-api .)
+        15.     restart: always
+            quando crashar, sempre restartar
+        16.     command: npm start
+            comando a executar depois do build
+        17.     volumes:
+            volumes a serem utilizados pelo container
+        18.       - ./dist:/usr/src/clean-node-api/dist
+            origem local / destino no container
+        19.     ports:
+            portas habilitadas
+        20.       - "5050:5050"
+            porta interna / porta exposta
+        21.     links:
+            quais containers este container enxerga
+        22.       - mongo
+            nome do container que este container enxerga
+
+      com estas alterações o arquivo Dockerfile, pode ser reduzido para:
+        01. FROM node:12
+        02. WORKDIR /usr/src/clean-node-api
+        03. COPY ./package.json .
+        04. RUN npm install --only=prod
+
+   Seguindo os passos:
+     1. remoção da dependência do sucrase no package.json e do script dev
+        "dev": "sucrase-node src/main/server.ts",
+     2. inclusão do script up para rodar containerizado e em background
+        "up": "npm run build && docker-compose up -d"
+     3. inclusão do script stop que finaliza a execução
+        "down": "docker-compose down"
+
+   Resumo:
+     1. npm run build
+     2. fazer limpeza de containers e imagens já existentes do clean-node-api
+     3. DOCKER Compose
+        
+        executar em foreground:
+          docker-compose up
+        parar:
+          Ctrl-C
+
+        executar em background:
+          docker-compose up -d
+        parar quando em background:
+          docker-compose down
