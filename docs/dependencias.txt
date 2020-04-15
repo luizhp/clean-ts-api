@@ -271,3 +271,66 @@ Seção 12, Aula 37 - Criando o jwtAdapter e mockando com o jsonwebtoken
 
    npm install --save jsonwebtoken
    npm install -D @types/jsonwebtoken
+
+Seção 14, Aula 41 - Subindo a API para o Heroku
+
+1) rimraf
+   https://www.npmjs.com/package/rimraf
+   https://github.com/isaacs/rimraf#readme
+   https://github.com/isaacs/rimraf
+
+   npm install -D rimraf
+
+   Neste projeto, utilizado para remover a pasta dist antes que seja gerada uma nova
+   Ele é chamado no script do build: "rimraf dist && tsc"
+
+2) heroku
+
+   Criar conta,
+   criar app,
+   baixar client
+      https://devcenter.heroku.com/articles/heroku-cli
+
+      sudo snap install --classic heroku
+
+   associar
+
+      heroku login -i (autenticação via linha de comando)
+      heroku login    (autenticação via browser)
+        vai pedir para apertar enter e abrir página no browser para confirmar acesso
+        confirmado, fechar aba e voltar para a linha de comando
+
+   adicionar remoto do git:heroku ao repositório git existente
+
+      heroku git:remote -a <<nome-app-criada-no-heroku>>
+
+   (renomear o nome do remoto do heroku para identificar se é produção, homolog, etc...)
+
+      git remote rename heroku p
+      ou
+      git remote rename heroku h
+
+   enviar para heroku...
+
+      git push p master
+
+      verificar deploy no site do heroku:
+      opção MORE -> VIEW LOGS (ALL PROCESSES e depois tem o WEB)
+
+   setups
+
+      possível configurar as variáveis de ambiente em SETTINGS -> CONFIG VARS
+      
+      adicionar mongo em add-ons:
+         mLab MongoDB, add-on free
+
+         gera uri de conexão em SETTINGS -> CONFIG VARS
+          MONGODB_URI
+            mongodb://dbuser:dbpass@host:port/dbname
+
+         sobre:
+           https://devcenter.heroku.com/articles/mongolab
+         configurar acesso remoto com robo3t
+           https://yellowme.gitbooks.io/playbook/content/developing/guides/database/configure-a-mlab-database-to-robo-3trobomongo.html
+
+    A url da api fica em SETTINGS e podemos utilizar dentro do postman para testes da api
