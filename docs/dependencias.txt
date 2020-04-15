@@ -334,3 +334,51 @@ Seção 14, Aula 41 - Subindo a API para o Heroku
            https://yellowme.gitbooks.io/playbook/content/developing/guides/database/configure-a-mlab-database-to-robo-3trobomongo.html
 
     A url da api fica em SETTINGS e podemos utilizar dentro do postman para testes da api
+
+Seção 14, Aula 42 - Gerando uma imagem da API com Docker
+
+1) docker
+
+     node
+       https://hub.docker.com/_/node
+
+     criação do Dockerfile
+
+       1. FROM node:12
+          determina o node versão 12 como imagem a ser utilizada
+          caso surjam upgrades/release de versão 12.x.x, esta imagem será
+          atualizada obedecendo o limite da versão 12
+       
+       2. WORKDIR /usr/src/clean-node-api
+          define qual é a pasta dentro do container a ser utilizada para os passos a seguir
+
+       3. COPY ./package.json .
+          copia da origem na máquina local o arquivo package.json
+          e o destino é a pasta atual no container (passo 2)
+
+       4. RUN npm install --only=prod
+          roda o comando npm install determinando que somente os pacotes de produção definidos
+          no arquivos package.json sejam instalados
+
+       5. COPY ./dist ./dist
+          copia a pasta ./dist da máquina local para a pasta atual do container (definida no passo 2)
+
+       6. EXPOSE 5000
+          abre a porta 5000 do container para acesso externo
+
+       7. CMD npm start
+          executa o comando npm start hospedado no container
+
+    antes de fazer o build do Dockerfile, verificar se há algum container criado, fazendo a remoção:
+      docker container rm clean-node-api
+
+    build do Dockerfile:
+      docker build -t clean-node-api .
+
+    execução da imagem com shell
+      docker run -it clean-node-api sh
+
+    execução da imagem
+      docker run -p 5000:5000 clean-node-api
+
+    (continua com a configuração do mongo)

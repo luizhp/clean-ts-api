@@ -143,6 +143,9 @@ Seção 14: Bônus
 41 - Subindo a API para o Heroku
      dependencias.txt
 
+42 - Gerando uma imagem da API com Docker
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -171,3 +174,5 @@ URLs:
   https://git-scm.com/book/en/v2/Git-Basics-Tagging
   https://www.npmjs.com/package/jsonwebtoken
   https://www.npmjs.com/package/rimraf
+  https://www.heroku.com
+  https://hub.docker.com/_/node
