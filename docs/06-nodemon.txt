@@ -1,0 +1,34 @@
+Seção 14, Aula 45 - Usando Nodemon no Docker com Typescript
+
+  1) Nodemon
+
+     Optou por instalar o nodemon como pacote de produção
+     para que ocorresse a execução do nodemon dentro do container
+       npm install --save nodemon
+
+     obs.: lembre-se que node e nodemon executam os arquivos .js em dist
+           e o tsc compila no projeto original os arquivos .ts para .js
+
+     arquivo docker-compose.yml
+      foi adicionado ao final do volume uma barra para ficar claro
+      ao build sobre a atualização da past dist local para a referência
+      no container:
+          volumes:
+          - ./dist/:/usr/src/clean-node-api/dist/
+
+     arquivo package.json
+      em scripts / debug, foi substituido o node por nodemon
+        "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
+        parâmetro      -L: forçar execução do nodemon dentro do container
+        parâmetro --watch: indicando qual pasta vigiar as modificações
+        obs.: alterado de "dist/main/server.js" para "./dist/main/server.js"
+
+     - tsc:
+     arquivo tsconfig.json
+      na seção "compilerOptions", incluída a entrada "rootDir": "src"
+        para influenciar a execução do tsc em qual pastas ele deverá monitorar
+        (principalmente quando estiver com o parâmetro -w de watch)
+      após esse ajuste, deixar em um terminal, rodando o comando:
+        tsc -w
+        este comando irá compilar modificações dos arquivos .ts
+        para arquivos .js na pasta de distribuição dentro do container

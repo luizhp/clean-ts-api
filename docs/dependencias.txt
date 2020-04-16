@@ -469,3 +469,16 @@ Seção 14, Aula 43 - Organizando as imagens e containers com Docker Compose
           docker-compose up -d
         parar quando em background:
           docker-compose down
+
+
+Seção 14, Aula 45 - Usando Nodemon no Docker com Typescript
+
+1) Nodemon
+   nodemon is a tool that helps develop node.js based applications by automatically
+   restarting the node application when file changes in the directory are detected.
+   https://www.npmjs.com/package/nodemon
+   https://nodemon.io/
+   https://github.com/remy/nodemon
+   
+   npm install --save nodemon
+

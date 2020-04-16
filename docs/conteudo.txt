@@ -152,6 +152,10 @@ Seção 14: Bônus
 44 - Debugando API com breakpoint
      05-debug.txt
 
+45 - Usando Nodemon no Docker com Typescript
+     dependencias.txt
+     06-nodemon.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -184,3 +188,4 @@ URLs:
   https://hub.docker.com/_/node
   https://hub.docker.com/_/mongo
   https://vscode-docs.readthedocs.io/en/stable/editor/debugging/
+  https://www.npmjs.com/package/nodemon
