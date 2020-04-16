@@ -1,13 +1,17 @@
 {
   "name": "clean-ts-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "NodeJs Rest API using TDD, Clean Architecture and Typescript",
   "keywords": [],
+  "homepage": "https://github.com/luizhp/clean-ts-api",
   "author": ".luizhp",
   "license": "ISC",
-  "repository": "github:luizhp/clean-ts-api",
   "directories": {
     "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luizhp/clean-ts-api"
   },
   "scripts": {
     "start": "node dist/main/server.js",
