@@ -41,4 +41,3 @@ test/*.js
 dist
 coverage
 data
-.vscode
