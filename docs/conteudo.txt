@@ -148,6 +148,10 @@ Seção 14: Bônus
 
 43 - Organizando as imagens e containers com Docker Compose
      dependencias.txt
+
+44 - Debugando API com breakpoint
+     05-debug.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -179,3 +183,4 @@ URLs:
   https://www.heroku.com
   https://hub.docker.com/_/node
   https://hub.docker.com/_/mongo
+  https://vscode-docs.readthedocs.io/en/stable/editor/debugging/

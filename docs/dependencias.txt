@@ -430,6 +430,7 @@ Seção 14, Aula 43 - Organizando as imagens e containers com Docker Compose
         17.     volumes:
             volumes a serem utilizados pelo container
         18.       - ./dist:/usr/src/clean-node-api/dist
+                  - ./package.json:/usr/src/clean-node-api/package.json  (adicionado na aula 44)
             origem local / destino no container
         19.     ports:
             portas habilitadas

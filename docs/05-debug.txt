@@ -1,0 +1,75 @@
+Seção 14, Aula 44 - Debugando API com breakpoint
+
+  https://vscode-docs.readthedocs.io/en/stable/editor/debugging/
+
+  1) habilitar debug para VSCODE
+
+     - arquivo tsconfig.json
+       
+         habilitar "sourceMap": true em "compilerOptions"
+         para gerar arquivos map junto com os js na distribuição
+       
+     - arquivo package.json
+       
+         incluir mais um script:
+         "debug": "node --inspect=0.0.0.0:9222 --nolazy dist/main/server.js"
+       
+           --inspect abre websocket para VSCode
+           --nolazy
+                Breakpoint Validation
+                For performance reasons Node.js parses the functions inside
+                JavaScript files lazily on first access.
+                As a consequence, breakpoints don't work in source code areas
+                that haven't been seen (parsed) by Node.js.
+                Since this behavior is not ideal for debugging, VS Code passes
+                the --nolazy option to Node.js automatically.
+                This prevents the delayed parsing and ensures that breakpoints
+                can be validated before running the code (so they no longer "jump").
+  
+                Since the --nolazy option might increase the start-up time of the debug
+                target significantly, you can easily opt out by passing a
+                --lazy as a runtimeArgs attribute.
+  
+     - arquivo docker-compose.yml
+  
+        no serviço api
+          substituir a entrada command 
+            está: npm start
+            para: npm run debug
+          acrescentar a porta do docker para debug do vscode
+            - "9222:9222"
+          acrescentar a referência do package.json para certificar que esteja atualizado no container
+            - ./package.json:/usr/src/clean-node-api/package.json
+
+     - arquivo launch.json
+
+       criar no menu run (ctrl-shift-D)
+         vide imagem 05-debug-01-create-launchjsonfile.png
+
+       editar arquivo
+         acrescentar configurações
+           - Clicar botão Add Configuration
+             vide imagem 05-debug-02-edit-launchjsonfile-add-configuration.png
+         escolher configuração pré-definada
+           - Docker Attach to Node
+             vide imagem 05-debug-03-edit-launchjsonfile-configuration-docker-attach-to-node.png
+
+       formato final, apos editar:
+         {
+           "version": "0.2.0",
+           "configurations": [{
+               "type": "node",
+               "request": "attach",
+               "name": "Docker: Attach to Node",
+               "remoteRoot": "/usr/src/clean-node-api",
+               "port": 9222,
+               "restart": true
+             }]
+         }
+
+     rodar:
+       .  npm run up
+       .  testar chamada no postman
+       .  voltar ao VSCode, entrar no menu de Debug (ctrl-shift-D) e clicar em RUN
+       .  fazer breakpoint em algum código, testar a chamada com postman
+       .  ao finalizar o debug, disconnect
