@@ -32,6 +32,27 @@ describe('Login Routes', () => {
         })
         .expect(200)
     })
+
+    test('Should return 403 if email is already in use', async () => {
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Nome',
+          email: 'nome@email.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(200)
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Nome',
+          email: 'nome@email.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(403)
+    })
   })
 
   describe('POST /login', () => {
