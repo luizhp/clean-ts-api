@@ -99,7 +99,7 @@ Now commit again, you can even re-use the same commit message:
   git commit -c ORIG_HEAD --no-edit
 
 -------------------
-Seção 8: Bônus - Aula 25 - Criando Tag e fazendo Push para o GitHub
+Seção 9: Bônus - Aula 27 - Criando Tag e fazendo Push para o GitHub
 
 GIT TAGs
   https://git-scm.com/book/en/v2/Git-Basics-Tagging
@@ -135,7 +135,7 @@ GIT TAGs
     . faz push
 
 -------------------
-Seção 13: Login API - Main Layer - Aula: 40 - Fazendo a composição do Login
+Seção 14: Login API - Main Layer - Aula: 41 - Fazendo a composição do Login
 
    - na branch feat/login, efetuar o último commit
    - foi dado git push origin feat/login e atualizada a branch remotamente
@@ -149,3 +149,27 @@ Seção 13: Login API - Main Layer - Aula: 40 - Fazendo a composição do Login
    - no config --global --edit, se a seção [push] possuir a propriedade followTags = true, ao fazer push levará os tags juntos
    - git push origin master
 
+-----------------------------
+Como fazer um commit e movê-lo para o passado:
+    https://stackoverflow.com/a/46413513/5604238
+
+    1. Create your new commit at the end, D. Now you have:
+       A -- B -- C -- D
+
+    2. Then run:
+       $ git rebase -i <<hash-of-A>>
+
+    3. Git will open your editor and it will look like this:
+       pick 8668d21 B
+       pick 650f1fc C
+       pick 74096b9 D
+
+    4. Just move D to the top like this, then save and quit
+       pick 74096b9 D
+       pick 8668d21 B
+       pick 650f1fc C
+    
+    5. Now you will have:
+       A -- D -- B -- C
+
+   

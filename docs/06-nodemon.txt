@@ -1,4 +1,4 @@
-Seção 14, Aula 45 - Usando Nodemon no Docker com Typescript
+Seção 15, Aula 46 - Usando Nodemon no Docker com Typescript
 
   1) Nodemon
 
