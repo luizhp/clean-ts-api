@@ -1,0 +1,18 @@
+Seção 14, Aula 46 - Adicionando documentação com casos de uso
+
+  1) Atualização de pacotes e dependências
+     Periodicamente verificar atualização de pacotes e dependências
+
+       npm update
+       npm audit fix --force
+
+       Ao final validar se tudo está ok
+         npm test
+
+  2) Documentação iniciada em:
+     ./readme.md
+     ./requirements/add-survey.md
+     ./requirements/answer-survey.md
+     ./requirements/login.md
+     ./requirements/signup.md
+     ./requirements/survey-result.md
