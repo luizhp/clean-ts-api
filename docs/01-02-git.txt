@@ -75,7 +75,10 @@ ou adicionar arquivo/modificação em commit anterior
 -------------------
 git stash
 
-  Aula 15, 19:51 (https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717494#questions)
+  Seção 7 - SingUp API - Infra Layer
+  Aula 17 - Configurando MongoDb em Memória
+  19:51
+  (https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717494#questions)
 
   Esconde um arquivo incompleto e que pode causar 
     1. git add <<arquivos - completos e incompletos>>
@@ -171,5 +174,3 @@ Como fazer um commit e movê-lo para o passado:
     
     5. Now you will have:
        A -- D -- B -- C
-
-   

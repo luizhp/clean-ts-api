@@ -168,6 +168,8 @@ Seção 16: SignUp API - Ajustes
 
 49 - Impedindo a criação de contas com Email existente
 
+50 - Refatorando a arquitetura
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
