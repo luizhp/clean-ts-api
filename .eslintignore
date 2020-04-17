@@ -2,5 +2,6 @@ docs
 node_modules
 dist
 coverage
-data
+./data
+requirements
 .vscode
