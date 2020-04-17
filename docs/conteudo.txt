@@ -159,6 +159,10 @@ Seção 14: Bônus
 46 - Adicionando documentação com casos de uso
      07-notes.txt
 
+Seção 15: SignUp API - Ajustes
+
+47 - Alterando o SignUp para retornar um token de acesso
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
