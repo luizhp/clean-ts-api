@@ -1,0 +1,16 @@
+
+1) middleware - validação caso um json inválido foi enviado
+   https://www.udemy.com/course/tdd-com-mango/learn/lecture/17957736#questions/10125014
+
+   app.use((err, req, res, next) => {
+     if (err) {
+     console.log('Invalid Request data')
+     res.send('Invalid Request data')
+     } else {
+     next()
+     }
+   })
+
+2) refactor folders
+   main/factories/controllers/login  ->  main/factories/controllers/LOGIN/login
+   main/factories/controllers/signup ->  main/factories/controllers/LOGIN/signup
