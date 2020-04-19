@@ -184,6 +184,8 @@ Seção 18: Criando Middleware de Autenticação
 
 55 - Criando o AuthMiddleware e fazendo os primeiros testes
 
+56 - Finalizando os testes do AuthMiddleware
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
