@@ -180,6 +180,10 @@ Seção 17: AddSurvey API
 
 54 - Criando a composição do AddSurvey
 
+Seção 18: Criando Middleware de Autenticação
+
+55 - Criando o AuthMiddleware e fazendo os primeiros testes
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
