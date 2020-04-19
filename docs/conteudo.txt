@@ -181,6 +181,7 @@ Seção 17: AddSurvey API
 54 - Criando a composição do AddSurvey
 
 Seção 18: Criando Middleware de Autenticação
+     08-merge-middleware.txt
 
 55 - Criando o AuthMiddleware e fazendo os primeiros testes
 
@@ -189,6 +190,10 @@ Seção 18: Criando Middleware de Autenticação
 57 - Criando o DbLoadAccountByToken
 
 58 - Implementando a interface Decrypter no JwtAdapter
+
+59 - Implementando a interface LoadAccountByToken no AccountMongoRepository
+
+60 - Aplicando o AuthMiddleware na rota de criar enquete
 
 -----------------
 URLs:
