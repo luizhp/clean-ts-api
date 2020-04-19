@@ -186,6 +186,8 @@ Seção 18: Criando Middleware de Autenticação
 
 56 - Finalizando os testes do AuthMiddleware
 
+57 - Criando o DbLoadAccountByToken
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
