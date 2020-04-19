@@ -195,6 +195,11 @@ Seção 18: Criando Middleware de Autenticação
 
 60 - Aplicando o AuthMiddleware na rota de criar enquete
 
+Seção 19: Bônus
+
+61 - Continuous Integration & Continuous Delivery
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -228,3 +233,5 @@ URLs:
   https://hub.docker.com/_/mongo
   https://vscode-docs.readthedocs.io/en/stable/editor/debugging/
   https://www.npmjs.com/package/nodemon
+  https://travis-ci.org/
+  https://coveralls.io/

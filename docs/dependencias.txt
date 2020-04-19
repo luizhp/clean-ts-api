@@ -482,3 +482,24 @@ Seção 15, Aula 46 - Usando Nodemon no Docker com Typescript
    
    npm install --save nodemon
 
+Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
+
+     https://travis-ci.org/
+     https://coveralls.io/
+
+1) coveralls.io
+
+   npm install -D coveralls
+
+   arquivo package.json, adicionar script:
+     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
+
+2) travis-ci
+
+   criar arquivo .travis.yml, adicionar. modelo link: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+     language: node_js
+     node_js:
+       - 12
+     script:
+       - eslint 'src/**'
+       - npm run test:coveralls
