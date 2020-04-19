@@ -188,6 +188,8 @@ Seção 18: Criando Middleware de Autenticação
 
 57 - Criando o DbLoadAccountByToken
 
+58 - Implementando a interface Decrypter no JwtAdapter
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
