@@ -1,0 +1,513 @@
+LoadSurveys
+
+Camadas presentation e domain
+##############################################################################
+### 01 - presentation/controller, domain/models, domain/usecases, presentation/helpers/http
+
+*************************************
+*************************************
+*************************************
+-- git commit: feat: ensure LoadSurveysController calls LoadSurveysUseCase
+
+/domain/models/survey.ts
+/domain/usecases/load-surveys.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller-protocols.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+
+------------------------------------------------------------------------------
+/domain/models/survey.ts
+------------------------------------------------------------------------------
+export interface SurveyModel {
+  id: string
+  question: string
+  answers: SurveyAnswerModel[]
+  date: Date
+}
+
+export interface SurveyAnswerModel {
+  image?: string
+  answer: string
+}
+
+------------------------------------------------------------------------------
+/domain/usecases/load-surveys.ts
+------------------------------------------------------------------------------
+import { SurveyModel } from '../models/survey'
+
+export interface LoadSurveys {
+  load (): Promise<SurveyModel[]>
+}
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller-protocols.ts
+------------------------------------------------------------------------------
+export * from '../../../protocols'
+export * from '../../../../domain/usecases/load-surveys'
+export * from '../../../../domain/models/survey'
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+------------------------------------------------------------------------------
+import { Controller, HttpRequest, HttpResponse, LoadSurveys } from './load-surveys-controller-protocols'
+
+export class LoadSurveysController implements Controller {
+  constructor (private readonly loadSurveys: LoadSurveys) {}
+
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+    await this.loadSurveys.load()
+    return null
+  }
+}
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+------------------------------------------------------------------------------
+import { LoadSurveysController } from './load-surveys-controller'
+import { SurveyModel, LoadSurveys } from './load-surveys-controller-protocols'
+import MockDate from 'mockdate'
+
+const makeFakeSurveys = (): SurveyModel[] => {
+  return [{
+    id: 'any_id',
+    question: 'any_question',
+    answers: [{
+      image: 'any_image',
+      answer: 'any_answer'
+    }],
+    date: new Date()
+  }, {
+    id: 'other_id',
+    question: 'other_question',
+    answers: [{
+      image: 'other_image',
+      answer: 'other_answer'
+    }],
+    date: new Date()
+  }]
+}
+
+describe('Loadsurveys Controller', () => {
+  beforeAll(() => {
+    MockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  test('Should call LoadSurveys', async () => {
+    class LoadSurveysStub implements LoadSurveys {
+      async load (): Promise<SurveyModel[]> {
+        return await new Promise(resolve => resolve(makeFakeSurveys()))
+      }
+    }
+    const loadSurveysStub = new LoadSurveysStub()
+    const loadSpy = jest.spyOn(loadSurveysStub, 'load')
+    const sut = new LoadSurveysController(loadSurveysStub)
+    await sut.handle({})
+    expect(loadSpy).toHaveBeenCalled()
+  })
+})
+
+
+
+
+*************************************
+*************************************
+*************************************
+-- git commit: refactor: move sut creation to a factory method
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+------------------------------------------------------------------------------
+import { LoadSurveysController } from './load-surveys-controller'
+import { SurveyModel, LoadSurveys } from './load-surveys-controller-protocols'
+import MockDate from 'mockdate'
+
+const makeFakeSurveys = (): SurveyModel[] => {
+  return [{
+    id: 'any_id',
+    question: 'any_question',
+    answers: [{
+      image: 'any_image',
+      answer: 'any_answer'
+    }],
+    date: new Date()
+  }, {
+    id: 'other_id',
+    question: 'other_question',
+    answers: [{
+      image: 'other_image',
+      answer: 'other_answer'
+    }],
+    date: new Date()
+  }]
+}
+
+const makeLoadSurveysStub = (): LoadSurveys => {
+  class LoadSurveysStub implements LoadSurveys {
+    async load (): Promise<SurveyModel[]> {
+      return await new Promise(resolve => resolve(makeFakeSurveys()))
+    }
+  }
+  return new LoadSurveysStub()
+}
+
+interface SutTypes {
+  sut: LoadSurveysController
+  loadSurveysStub: LoadSurveys
+}
+
+const makeSut = (): SutTypes => {
+  const loadSurveysStub = makeLoadSurveysStub()
+  const sut = new LoadSurveysController(loadSurveysStub)
+  return {
+    sut,
+    loadSurveysStub
+  }
+}
+
+describe('Loadsurveys Controller', () => {
+  beforeAll(() => {
+    MockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  test('Should call LoadSurveys', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    const loadSpy = jest.spyOn(loadSurveysStub, 'load')
+    await sut.handle({})
+    expect(loadSpy).toHaveBeenCalled()
+  })
+})
+
+
+*************************************
+*************************************
+*************************************
+-- git commit: feat: ensure LoadSurveysController returns 200 on success
+
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+------------------------------------------------------------------------------
+import { LoadSurveysController } from './load-surveys-controller'
+import { SurveyModel, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok } from '../../../helpers/http/http-helper'
+import MockDate from 'mockdate'
+
+const makeFakeSurveys = (): SurveyModel[] => {
+  return [{
+    id: 'any_id',
+    question: 'any_question',
+    answers: [{
+      image: 'any_image',
+      answer: 'any_answer'
+    }],
+    date: new Date()
+  }, {
+    id: 'other_id',
+    question: 'other_question',
+    answers: [{
+      image: 'other_image',
+      answer: 'other_answer'
+    }],
+    date: new Date()
+  }]
+}
+
+const makeLoadSurveysStub = (): LoadSurveys => {
+  class LoadSurveysStub implements LoadSurveys {
+    async load (): Promise<SurveyModel[]> {
+      return await new Promise(resolve => resolve(makeFakeSurveys()))
+    }
+  }
+  return new LoadSurveysStub()
+}
+
+interface SutTypes {
+  sut: LoadSurveysController
+  loadSurveysStub: LoadSurveys
+}
+
+const makeSut = (): SutTypes => {
+  const loadSurveysStub = makeLoadSurveysStub()
+  const sut = new LoadSurveysController(loadSurveysStub)
+  return {
+    sut,
+    loadSurveysStub
+  }
+}
+
+describe('Loadsurveys Controller', () => {
+  beforeAll(() => {
+    MockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  test('Should call LoadSurveys', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    const loadSpy = jest.spyOn(loadSurveysStub, 'load')
+    await sut.handle({})
+    expect(loadSpy).toHaveBeenCalled()
+  })
+
+  test('Should return 200 on success', async () => {
+    const { sut } = makeSut()
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(ok(makeFakeSurveys()))
+  })
+})
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+------------------------------------------------------------------------------
+import { Controller, HttpRequest, HttpResponse, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok } from '../../../helpers/http/http-helper'
+
+export class LoadSurveysController implements Controller {
+  constructor (private readonly loadSurveys: LoadSurveys) {}
+
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+    const surveys = await this.loadSurveys.load()
+    return ok(surveys)
+  }
+}
+
+
+*************************************
+*************************************
+*************************************
+-- git commit: feat: ensure LoadSurveysController returns 500 if LoadSurveysUseCase throws
+
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+------------------------------------------------------------------------------
+import { LoadSurveysController } from './load-surveys-controller'
+import { SurveyModel, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok, serverError } from '../../../helpers/http/http-helper'
+import MockDate from 'mockdate'
+
+const makeFakeSurveys = (): SurveyModel[] => {
+  return [{
+    id: 'any_id',
+    question: 'any_question',
+    answers: [{
+      image: 'any_image',
+      answer: 'any_answer'
+    }],
+    date: new Date()
+  }, {
+    id: 'other_id',
+    question: 'other_question',
+    answers: [{
+      image: 'other_image',
+      answer: 'other_answer'
+    }],
+    date: new Date()
+  }]
+}
+
+const makeLoadSurveysStub = (): LoadSurveys => {
+  class LoadSurveysStub implements LoadSurveys {
+    async load (): Promise<SurveyModel[]> {
+      return await new Promise(resolve => resolve(makeFakeSurveys()))
+    }
+  }
+  return new LoadSurveysStub()
+}
+
+interface SutTypes {
+  sut: LoadSurveysController
+  loadSurveysStub: LoadSurveys
+}
+
+const makeSut = (): SutTypes => {
+  const loadSurveysStub = makeLoadSurveysStub()
+  const sut = new LoadSurveysController(loadSurveysStub)
+  return {
+    sut,
+    loadSurveysStub
+  }
+}
+
+describe('Loadsurveys Controller', () => {
+  beforeAll(() => {
+    MockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  test('Should call LoadSurveys', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    const loadSpy = jest.spyOn(loadSurveysStub, 'load')
+    await sut.handle({})
+    expect(loadSpy).toHaveBeenCalled()
+  })
+
+  test('Should return 200 on success', async () => {
+    const { sut } = makeSut()
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(ok(makeFakeSurveys()))
+  })
+
+  test('Should return 500 if LoadSurveys throws', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    jest.spyOn(loadSurveysStub, 'load').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(serverError(new Error()))
+  })
+})
+
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+------------------------------------------------------------------------------
+import { Controller, HttpRequest, HttpResponse, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok, serverError } from '../../../helpers/http/http-helper'
+
+export class LoadSurveysController implements Controller {
+  constructor (private readonly loadSurveys: LoadSurveys) {}
+
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+    try {
+      const surveys = await this.loadSurveys.load()
+      return ok(surveys)
+    } catch (error) {
+      return serverError(error)
+    }
+  }
+}
+
+
+
+*************************************
+*************************************
+*************************************
+-- git commit: 
+
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts
+------------------------------------------------------------------------------
+import { LoadSurveysController } from './load-surveys-controller'
+import { SurveyModel, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok, serverError, noContent } from '../../../helpers/http/http-helper'
+import MockDate from 'mockdate'
+
+const makeFakeSurveys = (): SurveyModel[] => {
+  return [{
+    id: 'any_id',
+    question: 'any_question',
+    answers: [{
+      image: 'any_image',
+      answer: 'any_answer'
+    }],
+    date: new Date()
+  }, {
+    id: 'other_id',
+    question: 'other_question',
+    answers: [{
+      image: 'other_image',
+      answer: 'other_answer'
+    }],
+    date: new Date()
+  }]
+}
+
+const makeLoadSurveysStub = (): LoadSurveys => {
+  class LoadSurveysStub implements LoadSurveys {
+    async load (): Promise<SurveyModel[]> {
+      return await new Promise(resolve => resolve(makeFakeSurveys()))
+    }
+  }
+  return new LoadSurveysStub()
+}
+
+interface SutTypes {
+  sut: LoadSurveysController
+  loadSurveysStub: LoadSurveys
+}
+
+const makeSut = (): SutTypes => {
+  const loadSurveysStub = makeLoadSurveysStub()
+  const sut = new LoadSurveysController(loadSurveysStub)
+  return {
+    sut,
+    loadSurveysStub
+  }
+}
+
+describe('Loadsurveys Controller', () => {
+  beforeAll(() => {
+    MockDate.set(new Date())
+  })
+
+  afterAll(() => {
+    MockDate.reset()
+  })
+
+  test('Should call LoadSurveys', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    const loadSpy = jest.spyOn(loadSurveysStub, 'load')
+    await sut.handle({})
+    expect(loadSpy).toHaveBeenCalled()
+  })
+
+  test('Should return 200 on success', async () => {
+    const { sut } = makeSut()
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(ok(makeFakeSurveys()))
+  })
+
+  test('Should return 204 on success', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    jest.spyOn(loadSurveysStub, 'load').mockReturnValueOnce(new Promise(resolve => resolve([])))
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(noContent())
+  })
+
+  test('Should return 500 if LoadSurveys throws', async () => {
+    const { sut, loadSurveysStub } = makeSut()
+    jest.spyOn(loadSurveysStub, 'load').mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+    const httpResponse = await sut.handle({})
+    expect(httpResponse).toEqual(serverError(new Error()))
+  })
+})
+
+
+------------------------------------------------------------------------------
+/presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+------------------------------------------------------------------------------
+import { Controller, HttpRequest, HttpResponse, LoadSurveys } from './load-surveys-controller-protocols'
+import { ok, serverError, noContent } from '../../../helpers/http/http-helper'
+
+export class LoadSurveysController implements Controller {
+  constructor (private readonly loadSurveys: LoadSurveys) {}
+
+  async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+    try {
+      const surveys = await this.loadSurveys.load()
+      return surveys.length ? ok(surveys) : noContent()
+    } catch (error) {
+      return serverError(error)
+    }
+  }
+}

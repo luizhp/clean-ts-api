@@ -174,3 +174,9 @@ Como fazer um commit e movê-lo para o passado:
     
     5. Now you will have:
        A -- D -- B -- C
+
+-----------------------------
+Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
+
+  27:19 - remover arquivos que estão UNTRACKED (que não foram para git add ou commit)
+          git clean -df
