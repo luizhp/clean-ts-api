@@ -210,6 +210,9 @@ Seção 20: LoadSurveys API
 63 - Criando o DbLoadSurveys UseCase
      09-notes-loadsurveys-02-data-steps.txt
 
+64 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
+     09-notes-loadsurveys-03-infra-steps.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
