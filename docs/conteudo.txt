@@ -207,6 +207,9 @@ Seção 20: LoadSurveys API
      01-02-git.txt
      09-notes-loadsurveys-01-presentation-steps.txt
 
+63 - Criando o DbLoadSurveys UseCase
+     09-notes-loadsurveys-02-data-steps.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
