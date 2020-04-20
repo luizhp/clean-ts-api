@@ -200,6 +200,11 @@ Seção 19: Bônus
 61 - Continuous Integration & Continuous Delivery
      dependencias.txt
 
+Seção 20: LoadSurveys API
+
+62 - Criando o LoadSurveysController
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -235,3 +240,4 @@ URLs:
   https://www.npmjs.com/package/nodemon
   https://travis-ci.org/
   https://coveralls.io/
+  https://www.npmjs.com/package/mockdate

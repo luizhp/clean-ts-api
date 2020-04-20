@@ -503,3 +503,14 @@ Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
      script:
        - eslint 'src/**'
        - npm run test:coveralls
+
+ Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
+
+ 1) mockdate
+    A JavaScript Mock Date object that can be used to change when "now" is.
+    https://www.npmjs.com/package/mockdate
+    https://github.com/boblauer/MockDate
+    https://github.com/boblauer/MockDate
+
+    npm install -D mockdate
+
