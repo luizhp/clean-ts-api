@@ -2,6 +2,28 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  // A list of paths to directories that Jest should use to search for files in
+  roots: ['<rootDir>/src'],
+  // An array of glob patterns indicating a set of files for which coverage information should be collected
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!<rootDir>/src/main/**'
+  ],
+  // The directory where Jest should output its coverage files
+  coverageDirectory: 'coverage',
+  // The test environment that will be used for testing
+  testEnvironment: 'node',
+  // A preset that is used as a base for Jest's configuration
+  preset: '@shelf/jest-mongodb',
+  // A map from regular expressions to paths to transformers
+  transform: {
+    '.+\\.ts$': 'ts-jest'
+  },
+  // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1'
+  }
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -19,15 +41,6 @@ module.exports = {
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
-
-  // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/main/**'
-  ],
-
-  // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -81,9 +94,6 @@ module.exports = {
   //   "node"
   // ],
 
-  // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
-
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
 
@@ -92,9 +102,6 @@ module.exports = {
 
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
-
-  // A preset that is used as a base for Jest's configuration
-  preset: '@shelf/jest-mongodb',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -117,9 +124,6 @@ module.exports = {
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
 
-  // A list of paths to directories that Jest should use to search for files in
-  roots: ['<rootDir>/src'],
-
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
 
@@ -131,9 +135,6 @@ module.exports = {
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
-
-  // The test environment that will be used for testing
-  testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -166,11 +167,6 @@ module.exports = {
 
   // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
   // timers: "real",
-
-  // A map from regular expressions to paths to transformers
-  transform: {
-    '.+\\.ts$': 'ts-jest'
-  }
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
