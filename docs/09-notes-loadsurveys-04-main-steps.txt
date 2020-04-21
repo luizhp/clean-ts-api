@@ -1,0 +1,321 @@
+LoadSurveysRepository
+
+Camadas main, presentation, infra, data e domain
+##############################################################################
+### 04 - main/routes
+         main/factories/controllers
+         main/factories/usecases,
+         presentation/controllers
+         infra/db/mongodb
+         data/usecases
+         domain/usecases,
+         main/adapters
+         main/factories/decorators
+         main/factories/middlewares
+         main/middlewares
+         presentation/protocols
+
+main/routes/survey-routes.test.ts
+main/routes/survey-routes.ts
+main/factories/controllers/survey/load-surveys/load-surveys-controller-factory.ts
+main/factories/usecases/survey/load-surveys/db-load-surveys-factory.ts
+
+presentation/controllers/survey/load-surveys/load-surveys-controller.ts
+infra/db/mongodb/survey/survey-mongo-repository
+data/usecases/load-surveys/db-load-surveys
+domain/usecases/load-surveys
+
+main/adapters/express-route-adapter.ts
+main/adapters/express-middleware-adapter.ts
+main/factories/decorators/log-controller-decorator-factory.ts
+main/factories/middlewares/auth-middleware-factory.ts
+main/middlewares/admin-auth.ts
+main/middlewares/auth.ts
+presentation/protocols/controller.ts
+
+*************************************
+*************************************
+*************************************
+-- git commit: feat: ensure load surveys route returns 403 if no access token is provided
+
+------------------------------------------------------------------------------
+main/routes/survey-routes.test.ts
+------------------------------------------------------------------------------
+import request from 'supertest'
+import app from '../config/app'
+import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
+import { Collection } from 'mongodb'
+import { sign } from 'jsonwebtoken'
+import env from '../config/env'
+
+let surveyCollection: Collection
+let accountCollection: Collection
+
+describe('Survey Routes', () => {
+  beforeAll(async () => {
+    await MongoHelper.connect(process.env.MONGO_URL)
+  })
+
+  afterAll(async () => {
+    await MongoHelper.disconnect()
+  })
+
+  beforeEach(async () => {
+    surveyCollection = await MongoHelper.getCollection('surveys')
+    await surveyCollection.deleteMany({})
+    accountCollection = await MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
+  })
+
+  describe('POST /surveys', () => {
+    test('Should return 403 on add survey without accessToken', async () => {
+      await request(app)
+        .post('/api/surveys')
+        .send({
+          question: 'Question',
+          answers: [{
+            answer: 'Answer 1',
+            image: 'http://image-name.com'
+          }, {
+            answer: 'Answer 2'
+          }]
+        })
+        .expect(403)
+    })
+
+    test('Should return 204 on add survey with valid accessToken', async () => {
+      const res = await accountCollection.insertOne({
+        name: 'Nome',
+        email: 'nome@email.com',
+        password: '123',
+        role: 'admin'
+      })
+      const id = res.ops[0]._id
+      const accessToken = sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne(
+        {
+          _id: id
+        }, {
+          $set: {
+            accessToken
+          }
+        }
+      )
+      await request(app)
+        .post('/api/surveys')
+        .set('x-access-token', accessToken)
+        .send({
+          question: 'Question',
+          answers: [{
+            answer: 'Answer 1',
+            image: 'http://image-name.com'
+          }, {
+            answer: 'Answer 2'
+          }]
+        })
+        .expect(204)
+    })
+  })
+
+  describe('GET /surveys', () => {
+    test('Should return 403 on add survey without accessToken', async () => {
+      await request(app)
+        .get('/api/surveys')
+        .expect(403)
+    })
+  })
+})
+
+------------------------------------------------------------------------------
+main/routes/survey-routes.ts
+------------------------------------------------------------------------------
+import { Router } from 'express'
+import { adaptRoute } from '../adapters/express-route-adapter'
+import { makeAddSurveyController } from '../factories/controllers/survey/add-survey/add-survey-controller-factory'
+import { makeLoadSurveysController } from '../factories/controllers/survey/load-surveys/load-surveys-controller-factory'
+import { makeAuthMiddleware } from '../factories/middlewares/auth-middleware-factory'
+import { adaptMiddleware } from '../adapters/express-middleware-adapter'
+
+export default (router: Router): void => {
+  const adminAuth = adaptMiddleware(makeAuthMiddleware('admin'))
+  const auth = adaptMiddleware(makeAuthMiddleware())
+  router.post('/surveys', adminAuth, adaptRoute(makeAddSurveyController()))
+  router.get('/surveys', auth, adaptRoute(makeLoadSurveysController()))
+}
+
+------------------------------------------------------------------------------
+main/factories/controllers/survey/load-surveys/load-surveys-controller-factory.ts
+------------------------------------------------------------------------------
+import { Controller } from '../../../../../presentation/protocols'
+import { makeLogControllerDecorator } from '../../../decorators/log-controller-decorator-factory'
+import { LoadSurveysController } from '../../../../../presentation/controllers/survey/load-surveys/load-surveys-controller'
+import { makeDbLoadSurveys } from '../../../usecases/survey/load-surveys/db-load-surveys-factory'
+
+export const makeLoadSurveysController = (): Controller => {
+  const controller = new LoadSurveysController(makeDbLoadSurveys())
+  return makeLogControllerDecorator(controller)
+}
+
+------------------------------------------------------------------------------
+main/factories/usecases/survey/load-surveys/db-load-surveys-factory.ts
+------------------------------------------------------------------------------
+import { SurveyMongoRepository } from '../../../../../infra/db/mongodb/survey/survey-mongo-repository'
+import { LoadSurveys } from '../../../../../domain/usecases/load-surveys'
+import { DbLoadSurveys } from '../../../../../data/usecases/load-surveys/db-load-surveys'
+
+export const makeDbLoadSurveys = (): LoadSurveys => {
+  const surveyMongoRepository = new SurveyMongoRepository()
+  return new DbLoadSurveys(surveyMongoRepository)
+}
+
+
+
+
+*************************************
+*************************************
+*************************************
+-- git commit: 
+       * test: ensure load surveys route returns 204 if a valid token is provided
+       * test: ensure load surveys route returns 200 if a valid token is provided
+
+------------------------------------------------------------------------------
+src/main/routes/survey-routes.test.ts
+------------------------------------------------------------------------------
+import request from 'supertest'
+import app from '../config/app'
+import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
+import { Collection } from 'mongodb'
+import { sign } from 'jsonwebtoken'
+import env from '../config/env'
+
+let surveyCollection: Collection
+let accountCollection: Collection
+
+describe('Survey Routes', () => {
+  beforeAll(async () => {
+    await MongoHelper.connect(process.env.MONGO_URL)
+  })
+
+  afterAll(async () => {
+    await MongoHelper.disconnect()
+  })
+
+  beforeEach(async () => {
+    surveyCollection = await MongoHelper.getCollection('surveys')
+    await surveyCollection.deleteMany({})
+    accountCollection = await MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
+  })
+
+  describe('POST /surveys', () => {
+    test('Should return 403 on add survey without accessToken', async () => {
+      await request(app)
+        .post('/api/surveys')
+        .send({
+          question: 'Question',
+          answers: [{
+            answer: 'Answer 1',
+            image: 'http://image-name.com'
+          }, {
+            answer: 'Answer 2'
+          }]
+        })
+        .expect(403)
+    })
+
+    test('Should return 204 on add survey with valid accessToken', async () => {
+      const res = await accountCollection.insertOne({
+        name: 'Nome',
+        email: 'nome@email.com',
+        password: '123',
+        role: 'admin'
+      })
+      const id = res.ops[0]._id
+      const accessToken = sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne(
+        {
+          _id: id
+        }, {
+          $set: {
+            accessToken
+          }
+        }
+      )
+      await request(app)
+        .post('/api/surveys')
+        .set('x-access-token', accessToken)
+        .send({
+          question: 'Question',
+          answers: [{
+            answer: 'Answer 1',
+            image: 'http://image-name.com'
+          }, {
+            answer: 'Answer 2'
+          }]
+        })
+        .expect(204)
+    })
+  })
+
+  describe('GET /surveys', () => {
+    test('Should return 403 on add survey without accessToken', async () => {
+      await request(app)
+        .get('/api/surveys')
+        .expect(403)
+    })
+
+    test('Should return 204 on load surveys with valid accessToken', async () => {
+      const res = await accountCollection.insertOne({
+        name: 'Nome',
+        email: 'nome@email.com',
+        password: '123'
+      })
+      const id = res.ops[0]._id
+      const accessToken = sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne(
+        {
+          _id: id
+        }, {
+          $set: {
+            accessToken
+          }
+        }
+      )
+      await request(app)
+        .get('/api/surveys')
+        .set('x-access-token', accessToken)
+        .expect(204)
+    })
+
+    test('Should return 200 on load surveys with valid accessToken', async () => {
+      const res = await accountCollection.insertOne({
+        name: 'Nome',
+        email: 'nome@email.com',
+        password: '123'
+      })
+      const id = res.ops[0]._id
+      const accessToken = sign({ id }, env.jwtSecret)
+      await accountCollection.updateOne(
+        {
+          _id: id
+        }, {
+          $set: {
+            accessToken
+          }
+        }
+      )
+      await surveyCollection.insertMany([{
+        question: 'any_question',
+        answers: [{
+          image: 'any_image',
+          answer: 'any_answer'
+        }],
+        date: new Date()
+      }])
+      await request(app)
+        .get('/api/surveys')
+        .set('x-access-token', accessToken)
+        .expect(200)
+    })
+  })
+})

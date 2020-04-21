@@ -213,6 +213,10 @@ Seção 20: LoadSurveys API
 64 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
      09-notes-loadsurveys-03-infra-steps.txt
 
+65 - Criando a composição do LoadSurveys
+     09-notes-loadsurveys-04-main-steps.txt
+     09-notes-loadsurveys-05-merge.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
