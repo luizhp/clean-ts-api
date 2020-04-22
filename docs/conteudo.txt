@@ -221,6 +221,7 @@ Seção 21: Bônus
 
 66 - Modularizando os paths dos imports
      dependencias.txt
+     10-merge-import-paths
 
 -----------------
 URLs:
