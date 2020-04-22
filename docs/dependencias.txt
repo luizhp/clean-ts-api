@@ -252,6 +252,7 @@ Seção 8, Aula 19 - Testando middlewares do express
 
    npm install -D supertest @types/supertest
 
+***********************************************
 Seção 8, Aula 20 - Criando teste de integração para o SignUp
 
 1) fast-glob
@@ -264,6 +265,7 @@ Seção 8, Aula 20 - Criando teste de integração para o SignUp
 
    npm install --save fast-glob
 
+***********************************************
 Seção 13, Aula 38 - Criando o JwtAdapter e mockando com o jsonwebtoken
 
 1) jsonwebtoken
@@ -274,6 +276,7 @@ Seção 13, Aula 38 - Criando o JwtAdapter e mockando com o jsonwebtoken
    npm install --save jsonwebtoken
    npm install -D @types/jsonwebtoken
 
+***********************************************
 Seção 15, Aula 42 - Subindo a API para o Heroku
 
 1) rimraf
@@ -337,6 +340,7 @@ Seção 15, Aula 42 - Subindo a API para o Heroku
 
     A url da api fica em SETTINGS e podemos utilizar dentro do postman para testes da api
 
+***********************************************
 Seção 15, Aula 43 - Gerando uma imagem da API com Docker
 
 1) docker
@@ -470,7 +474,7 @@ Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose
         parar quando em background:
           docker-compose down
 
-
+***********************************************
 Seção 15, Aula 46 - Usando Nodemon no Docker com Typescript
 
 1) Nodemon
@@ -504,7 +508,8 @@ Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
        - eslint 'src/**'
        - npm run test:coveralls
 
- Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
+***********************************************
+Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
 
  1) mockdate
     A JavaScript Mock Date object that can be used to change when "now" is.
@@ -514,3 +519,12 @@ Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
 
     npm install -D mockdate
 
+***********************************************
+Seção 21: Bônus, Aula 66 - Modularizando os paths dos imports
+
+ 1) module-alias
+    Create aliases of directories and register custom module paths in NodeJS like a boss!
+    https://www.npmjs.com/package/module-alias
+    https://github.com/ilearnio/module-alias
+
+    npm install --save module-alias
