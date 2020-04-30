@@ -1,4 +1,4 @@
-Seção 15, Aula 47 - Adicionando documentação com casos de uso
+Seção 15, Aula 48 - Adicionando documentação com casos de uso
 
   1) Atualização de pacotes e dependências
      Periodicamente verificar atualização de pacotes e dependências

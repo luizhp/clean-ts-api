@@ -23,203 +23,205 @@ Seção 2: Bônus
 
 06 - Dicas extras
 
+07 - Problema identificado em biblioteca
+
 Seção 3: SignUp API - Presentation Layer
 
-07 - Criando o SignUpController e validando o request
+08 - Criando o SignUpController e validando o request
      02-notes.txt
      clean-architecture-diagram-signup.pdf
 
-08 - Criando erros personalizados
+09 - Criando erros personalizados
      02-notes.txt
 
-09 - Utilizando Mocks da maneira correta
+10 - Utilizando Mocks da maneira correta
      02-notes.txt
 
-10 - Testando exceções e integrando com o EmailValidator
+11 - Testando exceções e integrando com o EmailValidator
 
-11 - Integrando com o AddAccount Usecase
+12 - Integrando com o AddAccount Usecase
 
 
 Seção 4: Jest
 
-12 - Configurando o Jest e criando scripts de test
+13 - Configurando o Jest e criando scripts de test
      03-notes.txt
 
 
 Seção 5: Utils Layer
 
-13 - Criando o EmailValidatorAdapter e mockando o validator
+14 - Criando o EmailValidatorAdapter e mockando o validator
      dependencias.txt
 
 
 Seção 6: SignUp API - Data Layer
 
-14 - Criando o DbAddAccount e Integrando com o Encrypter
+15 - Criando o DbAddAccount e Integrando com o Encrypter
 
-15 - Integrando com o AddAccountRepository
+16 - Integrando com o AddAccountRepository
 
 
 Seção 7: SignUp API - Infra Layer
 
-16 - Criando o BcryptAdapter e mockando o bcrypt
+17 - Criando o BcryptAdapter e mockando o bcrypt
      dependencias.txt
 
-17 - Configurando MongoDb em memória
+18 - Configurando MongoDb em memória
      dependencias.txt
      01-02-git.txt (sobre git stash)
 
-18 - Testando o MongoDb
+19 - Testando o MongoDb
 
 
 Seção 8: SignUp API - Main Layer
 
-19 - Testando middlewares do express
+20 - Testando middlewares do express
      dependencias.txt
 
-20 - Criando teste de integração para o SignUp
+21 - Criando teste de integração para o SignUp
      dependencias.txt
 
-21 - Fazendo a composição do SignUp e desacoplando do express
+22 - Fazendo a composição do SignUp e desacoplando do express
 
 
 Seção 9: Bônus
 
-22 - Testando a conexão com o MongoDb
+23 - Testando a conexão com o MongoDb
 
-23 - Aplicando o Design Pattern Decorator
+24 - Aplicando o Design Pattern Decorator
 
-24 - Adicionando Log de Erro
+25 - Adicionando Log de Erro
 
-25 - Refatorando os testes
+26 - Refatorando os testes
 
-26 - Persistindo Log de Erro no MongoDb
+27 - Persistindo Log de Erro no MongoDb
 
-27 - Criando Tag e fazendo Push para o GitHub
+28 - Criando Tag e fazendo Push para o GitHub
 
 
 Seção 10: Login API - Presentation Layer
 
-28 - Criando o LoginController e validando o request
+29 - Criando o LoginController e validando o request
 
-29 - Testando a integração do LoginController com o Authentication Usecase
+30 - Testando a integração do LoginController com o Authentication Usecase
 
-30 - Aplicando o Design Pattern Composite 1/3
+31 - Aplicando o Design Pattern Composite 1/3
 
-31 - Aplicando o Design Pattern Composite 2/3
+32 - Aplicando o Design Pattern Composite 2/3
 
-32 - Aplicando o Design Pattern Composite 3/3
+33 - Aplicando o Design Pattern Composite 3/3
 
-33 - Refatorando o código
+34 - Refatorando o código
 
 
 Seção 11: Login API - Data Layer
 
-34 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
+35 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
 
-35 - Integrando o DbAuthentication com mais 3 dependências
+36 - Integrando o DbAuthentication com mais 3 dependências
 
 
 Seção 12: Bônus
 
-36 - Segurança
+37 - Segurança
 
 
 Seção 13: Login API - Infra Layer
 
-37 - Incluindo o HashComparer ao BcryptAdapter
+38 - Incluindo o HashComparer ao BcryptAdapter
 
-38 - Criando o JwtAdapter e mockando o jsonwebtoken
+39 - Criando o JwtAdapter e mockando o jsonwebtoken
      dependencias.txt
 
-39 - Incluindo mais duas interfaces no AccountMongoRepository
+40 - Incluindo mais duas interfaces no AccountMongoRepository
 
 Seção 14: Login API - Main Layer
 
-40 - Refatorando o projeto
+41 - Refatorando o projeto
 
-41 - Fazendo a composição do Login
+42 - Fazendo a composição do Login
      todo: 04-middlewares.txt
      01-02-git.txt
 
 Seção 15: Bônus
 
-42 - Subindo a API para o Heroku
+43 - Subindo a API para o Heroku
      dependencias.txt
 
-43 - Gerando uma imagem da API com Docker
+44 - Gerando uma imagem da API com Docker
      dependencias.txt
 
-44 - Organizando as imagens e containers com Docker Compose
+45 - Organizando as imagens e containers com Docker Compose
      dependencias.txt
 
-45 - Debugando API com breakpoint
+46 - Debugando API com breakpoint
      05-debug.txt
 
-46 - Usando Nodemon no Docker com Typescript
+47 - Usando Nodemon no Docker com Typescript
      dependencias.txt
      06-nodemon.txt
 
-47 - Adicionando documentação com casos de uso
+48 - Adicionando documentação com casos de uso
      07-notes.txt
 
 Seção 16: SignUp API - Ajustes
 
-48 - Alterando o SignUp para retornar um token de acesso
+49 - Alterando o SignUp para retornar um token de acesso
 
-49 - Impedindo a criação de contas com Email existente
+50 - Impedindo a criação de contas com Email existente
 
-50 - Refatorando a arquitetura
+51 - Refatorando a arquitetura
 
 Seção 17: AddSurvey API
 
-51 - Criando o AddSurveyController
-
-52 - Criando o SurveyMongoRepository
+52 - Criando o AddSurveyController
 
 53 - Criando o SurveyMongoRepository
 
-54 - Criando a composição do AddSurvey
+54 - Criando o SurveyMongoRepository
+
+55 - Criando a composição do AddSurvey
 
 Seção 18: Criando Middleware de Autenticação
      08-merge-middleware.txt
 
-55 - Criando o AuthMiddleware e fazendo os primeiros testes
+56 - Criando o AuthMiddleware e fazendo os primeiros testes
 
-56 - Finalizando os testes do AuthMiddleware
+57 - Finalizando os testes do AuthMiddleware
 
-57 - Criando o DbLoadAccountByToken
+58 - Criando o DbLoadAccountByToken
 
-58 - Implementando a interface Decrypter no JwtAdapter
+59 - Implementando a interface Decrypter no JwtAdapter
 
-59 - Implementando a interface LoadAccountByToken no AccountMongoRepository
+60 - Implementando a interface LoadAccountByToken no AccountMongoRepository
 
-60 - Aplicando o AuthMiddleware na rota de criar enquete
+61 - Aplicando o AuthMiddleware na rota de criar enquete
 
 Seção 19: Bônus
 
-61 - Continuous Integration & Continuous Delivery
+62 - Continuous Integration & Continuous Delivery
      dependencias.txt
 
 Seção 20: LoadSurveys API
 
-62 - Criando o LoadSurveysController
+63 - Criando o LoadSurveysController
      dependencias.txt
      01-02-git.txt
      09-notes-loadsurveys-01-presentation-steps.txt
 
-63 - Criando o DbLoadSurveys UseCase
+64 - Criando o DbLoadSurveys UseCase
      09-notes-loadsurveys-02-data-steps.txt
 
-64 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
+65 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
      09-notes-loadsurveys-03-infra-steps.txt
 
-65 - Criando a composição do LoadSurveys
+66 - Criando a composição do LoadSurveys
      09-notes-loadsurveys-04-main-steps.txt
      09-notes-loadsurveys-05-merge.txt
 
 Seção 21: Bônus
 
-66 - Modularizando os paths dos imports
+67 - Modularizando os paths dos imports
      dependencias.txt
      10-merge-import-paths
 

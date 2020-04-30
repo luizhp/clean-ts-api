@@ -179,7 +179,7 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
 
 
 ***********************************************
-Seção 5, Aula 13 - Criando o EmailValidatorAdapter e mockando o validator
+Seção 5, Aula 14 - Criando o EmailValidatorAdapter e mockando o validator
 
 1) Instalando a biblioteca Validator
 
@@ -190,7 +190,7 @@ Seção 5, Aula 13 - Criando o EmailValidatorAdapter e mockando o validator
    npm install -D @types/validator
 
 ***********************************************
-Seção 7, Aula 16 - Criando o BcryptAdapter e mockando o bcrypt
+Seção 7, Aula 17 - Criando o BcryptAdapter e mockando o bcrypt
 
 1) Bcrypt
    https://www.npmjs.com/package/bcrypt
@@ -199,7 +199,7 @@ Seção 7, Aula 16 - Criando o BcryptAdapter e mockando o bcrypt
    npm install -D @types/bcrypt
 
 ***********************************************
-Seção 7, Aula 17 - Configurando MongoDb em memória
+Seção 7, Aula 18 - Configurando MongoDb em memória
 
 1) jest-mongodb
    https://jestjs.io/docs/en/mongodb
@@ -216,7 +216,7 @@ Seção 7, Aula 17 - Configurando MongoDb em memória
    npm install --save mongodb
 
 ***********************************************
-Seção 8, Aula 19 - Testando middlewares do express
+Seção 8, Aula 20 - Testando middlewares do express
 
 1) express
    https://www.npmjs.com/package/express
@@ -243,7 +243,7 @@ Seção 8, Aula 19 - Testando middlewares do express
 
    npm install -D sucrase
 
-   será desinstalado na Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose
+   será desinstalado na Seção 15, Aula 45 - Organizando as imagens e containers com Docker Compose
 
 3) supertest
    Emular requisição HTTP
@@ -253,7 +253,7 @@ Seção 8, Aula 19 - Testando middlewares do express
    npm install -D supertest @types/supertest
 
 ***********************************************
-Seção 8, Aula 20 - Criando teste de integração para o SignUp
+Seção 8, Aula 21 - Criando teste de integração para o SignUp
 
 1) fast-glob
    This package provides methods for travel across the file system and returning pathnames that matched a defined
@@ -266,7 +266,7 @@ Seção 8, Aula 20 - Criando teste de integração para o SignUp
    npm install --save fast-glob
 
 ***********************************************
-Seção 13, Aula 38 - Criando o JwtAdapter e mockando com o jsonwebtoken
+Seção 13, Aula 39 - Criando o JwtAdapter e mockando com o jsonwebtoken
 
 1) jsonwebtoken
    https://www.npmjs.com/package/jsonwebtoken
@@ -277,7 +277,7 @@ Seção 13, Aula 38 - Criando o JwtAdapter e mockando com o jsonwebtoken
    npm install -D @types/jsonwebtoken
 
 ***********************************************
-Seção 15, Aula 42 - Subindo a API para o Heroku
+Seção 15, Aula 43 - Subindo a API para o Heroku
 
 1) rimraf
    https://www.npmjs.com/package/rimraf
@@ -341,7 +341,7 @@ Seção 15, Aula 42 - Subindo a API para o Heroku
     A url da api fica em SETTINGS e podemos utilizar dentro do postman para testes da api
 
 ***********************************************
-Seção 15, Aula 43 - Gerando uma imagem da API com Docker
+Seção 15, Aula 44 - Gerando uma imagem da API com Docker
 
 1) docker
 
@@ -386,9 +386,9 @@ Seção 15, Aula 43 - Gerando uma imagem da API com Docker
     execução da imagem
       docker run -p 5000:5000 clean-node-api
 
-    (continua com a configuração do mongo - Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose)
+    (continua com a configuração do mongo - Seção 15, Aula 45 - Organizando as imagens e containers com Docker Compose)
 
-Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose
+Seção 15, Aula 45 - Organizando as imagens e containers com Docker Compose
 
 1) Docker compose - docker-compose.yml
 
@@ -434,7 +434,7 @@ Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose
         17.     volumes:
             volumes a serem utilizados pelo container
         18.       - ./dist:/usr/src/clean-node-api/dist
-                  - ./package.json:/usr/src/clean-node-api/package.json  (adicionado na aula 45 - Debugando API com breakpoint)
+                  - ./package.json:/usr/src/clean-node-api/package.json  (adicionado na aula 46 - Debugando API com breakpoint)
             origem local / destino no container
         19.     ports:
             portas habilitadas
@@ -475,7 +475,7 @@ Seção 15, Aula 44 - Organizando as imagens e containers com Docker Compose
           docker-compose down
 
 ***********************************************
-Seção 15, Aula 46 - Usando Nodemon no Docker com Typescript
+Seção 15, Aula 47 - Usando Nodemon no Docker com Typescript
 
 1) Nodemon
    nodemon is a tool that helps develop node.js based applications by automatically
@@ -486,7 +486,7 @@ Seção 15, Aula 46 - Usando Nodemon no Docker com Typescript
    
    npm install --save nodemon
 
-Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
+Seção 19: Bônus, Aula 62 - Continuous Integration & Continuous Delivery
 
      https://travis-ci.org/
      https://coveralls.io/
@@ -509,7 +509,7 @@ Seção 19: Bônus, Aula 61 - Continuous Integration & Continuous Delivery
        - npm run test:coveralls
 
 ***********************************************
-Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
+Seção 20: LoadSurveys API, Aula 63 - Criando o LoadSurveysController
 
  1) mockdate
     A JavaScript Mock Date object that can be used to change when "now" is.
@@ -520,7 +520,7 @@ Seção 20: LoadSurveys API, Aula 62 - Criando o LoadSurveysController
     npm install -D mockdate
 
 ***********************************************
-Seção 21: Bônus, Aula 66 - Modularizando os paths dos imports
+Seção 21: Bônus, Aula 67 - Modularizando os paths dos imports
 
  1) module-alias
     Create aliases of directories and register custom module paths in NodeJS like a boss!
