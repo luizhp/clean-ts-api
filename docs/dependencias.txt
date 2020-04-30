@@ -178,6 +178,27 @@ Biblioteca para forçar que a convenção do texto no commit seja seguido:
    2. rodar no shell npm test (executa o script definido no package.json)
 
 
+
+***********************************************
+Seção 2, Aula 7 - Problema identificado em biblioteca
+
+1) reload - vscode
+   cria botão na bottom bar que faz reload do VSCode para resetá-lo quando estiver bugado
+   https://marketplace.visualstudio.com/items?itemName=natqe.reload
+
+2) npm-check
+   Check for outdated, incorrect, and unused dependencies.
+   https://www.npmjs.com/package/npm-check
+   https://github.com/dylang/npm-check
+
+   sudo npm install -g npm-check
+
+   chamar com:
+   npm-check -s -u
+
+3) sudo apt install eslint
+
+
 ***********************************************
 Seção 5, Aula 14 - Criando o EmailValidatorAdapter e mockando o validator
 

@@ -22,6 +22,7 @@ Seção 1: Introdução
 Seção 2: Bônus
 
 06 - Dicas extras
+     dependencias.txt
 
 07 - Problema identificado em biblioteca
 
@@ -262,3 +263,5 @@ URLs:
   https://coveralls.io/
   https://www.npmjs.com/package/mockdate
   https://www.npmjs.com/package/module-alias
+  https://marketplace.visualstudio.com/items?itemName=natqe.reload
+  https://www.npmjs.com/package/npm-check

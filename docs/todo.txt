@@ -14,3 +14,11 @@
 2) refactor folders
    main/factories/controllers/login  ->  main/factories/controllers/LOGIN/login
    main/factories/controllers/signup ->  main/factories/controllers/LOGIN/signup
+
+3) await new Promise(....)
+   Seção 2: Bônus, Aula 07 - Problema identificado em biblioteca
+   "eslint-config-standard-with-typescript": "^15.0.1",
+   mudar para
+   "eslint-config-standard-with-typescript": "^11.0.1",
+
+   complementa automaticamente await new Promise(... quando espera que seja apenas new Promise(...
