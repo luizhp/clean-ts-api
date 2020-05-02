@@ -1,0 +1,19 @@
+Seção 21: Bônus, Aula 69 - Usando Utility Types do Typescript
+
+   Omit<T,K>
+      Constructs a type by picking all properties from T and then removing K.
+      https://www.typescriptlang.org/docs/handbook/utility-types.html#omittk
+      
+      Example
+      interface Todo {
+        title: string;
+        description: string;
+        completed: boolean;
+      }
+      
+      type TodoPreview = Omit<Todo, "description">;
+      
+      const todo: TodoPreview = {
+        title: "Clean room",
+        completed: false
+      };
