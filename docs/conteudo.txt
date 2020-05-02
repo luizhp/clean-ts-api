@@ -226,6 +226,9 @@ Seção 21: Bônus
      dependencias.txt
      10-merge-import-paths
 
+68 - Utilizando Type Alias
+     01-02-git.txt (como consertou falta de git merge antes de fazer criação de nova tag)
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats

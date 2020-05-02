@@ -180,3 +180,14 @@ Seção 20: LoadSurveys API, Aula 63 - Criando o LoadSurveysController
 
   27:19 - remover arquivos que estão UNTRACKED (que não foram para git add ou commit)
           git clean -df
+
+-----------------------------
+Seção 21: Bônus, Aula 68 - Utilizando Type alias
+
+  00:00~05:08 - voltando ao git anterior
+
+          retornar ao commit:
+            git reset --hard XXXXXXX
+
+          remove tag:
+            git push --delete o 2.0.0
