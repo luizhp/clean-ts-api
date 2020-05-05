@@ -5,7 +5,7 @@
   "keywords": [],
   "homepage": "https://github.com/luizhp/clean-ts-api",
   "author": ".luizhp",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "directories": {
     "doc": "docs"
   },
