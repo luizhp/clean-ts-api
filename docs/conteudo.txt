@@ -233,6 +233,10 @@ Seção 21: Bônus
 69 - Usando Utility Types do Typescript
      12-notes-omit-type-utility.txt
 
+Seção 22: SaveSurveyResult API
+
+70 - Criando os Models e UseCases
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
