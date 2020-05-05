@@ -237,6 +237,8 @@ Seção 22: SaveSurveyResult API
 
 70 - Criando os Models e UseCases
 
+71 - Criando o DbLoadSurveyById UseCase
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
