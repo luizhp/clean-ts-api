@@ -245,6 +245,8 @@ Seção 22: SaveSurveyResult API
 
 74 - Incluindo o SaveSurveyResultRepository ao SurveyResultMongoRepository
 
+75 - Refactor - Organizando pastas
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
