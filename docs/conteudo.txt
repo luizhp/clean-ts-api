@@ -243,6 +243,8 @@ Seção 22: SaveSurveyResult API
 
 73 - Incluindo o LoadSurveyByIdRepository ao SurveyResultMongoRepository
 
+74 - Incluindo o SaveSurveyResultRepository ao SurveyResultMongoRepository
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
