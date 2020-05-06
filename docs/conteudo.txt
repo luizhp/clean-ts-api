@@ -241,6 +241,8 @@ Seção 22: SaveSurveyResult API
 
 72 - Criando o DbSaveSurveyResult UseCase
 
+73 - Incluindo o LoadSurveyByIdRepository ao SurveyResultMongoRepository
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
