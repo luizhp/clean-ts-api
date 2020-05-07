@@ -22,3 +22,15 @@
    "eslint-config-standard-with-typescript": "^11.0.1",
 
    complementa automaticamente await new Promise(... quando espera que seja apenas new Promise(...
+
+4) src/infra/db/mongodb/survey-result/survey-result-mongo-repository.ts
+
+   Ao invés de gravar formato string na coluna surveyId da coleção surveyresult, gravar como objectId
+   
+   Antes
+     secao22-aula78-01-objectid-vscode-grava-string.png
+     secao22-aula78-02-objectid-mongodb-grava-string.png
+
+   Depois:
+     secao22-aula78-03-objectid-vscode-grava-objectid.png
+     secao22-aula78-04-objectid-mongodb-grava-objectid.png
