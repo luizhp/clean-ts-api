@@ -252,6 +252,12 @@ Seção 22: SaveSurveyResult API
 77 - Criando o SaveSurveyResult Controller 2/2
 
 78 - Fazendo a composição do SaveSurveyResult
+     13-merge-feat-add-survey-result.txt
+
+Seção 23: Refactor
+
+79 - Padronizando nomenclaturas
+     14-notes-test-refactor.txt
 
 -----------------
 URLs:

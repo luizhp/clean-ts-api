@@ -1,0 +1,13 @@
+
+//---
+mockFakeAccount -> mockAccountModel
+
+//---
+mockFakeAccountData -> mockAddAccountParams
+
+//---ok
+.mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
+.mockImplementationOnce(() => { throw new Error() })
+.mockImplementationOnce(throwError)
+
+//--
