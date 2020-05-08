@@ -36,3 +36,21 @@ makeUpdateAccessTokenRepository -> mockUpdateAccessTokenRepository
 
 //-ok
 makeFakeAuthentication -> mockAuthentication
+
+//-ok
+makeLogErrorRepository -> mockLogErrorRepository
+
+//-ok
+makeAddSurveyRepositoryStub -> mockAddSurveyRepository
+
+//-ok
+makeLoadSurveyByIdRepositoryStub -> mockLoadSurveyByIdRepository
+
+//-ok
+makeFakeSurvey -> mockSurveyModel
+
+//-ok
+makeLoadSurveysRepositoryStub -> mockLoadSurveysRepository
+
+//-ok
+makeFakeSurveys -> mockSurveyModels
