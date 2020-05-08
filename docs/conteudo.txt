@@ -259,6 +259,9 @@ Seção 23: Refactor
 79 - Padronizando nomenclaturas
      14-notes-test-refactor.txt
 
+80 - Reutilizando a criação de mocks
+     14-notes-test-refactor.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats

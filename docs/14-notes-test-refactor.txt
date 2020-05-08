@@ -54,3 +54,12 @@ makeLoadSurveysRepositoryStub -> mockLoadSurveysRepository
 
 //-ok
 makeFakeSurveys -> mockSurveyModels
+
+//-ok
+makeSaveSurveyResultRepositoryStub -> mockSaveSurveyResultRepository
+
+//-ok
+makeFakeSurveyResultData -> mockSaveSurveyResultParams
+
+//-ok
+makeFakeSurveyResult -> mockSurveyResultModel
