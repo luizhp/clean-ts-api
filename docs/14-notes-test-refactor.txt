@@ -22,3 +22,17 @@ makeEncrypter -> mockEncrypter
 //--ok
 makeHashComparer -> mockHashComparer
 
+//-ok
+makeAddAccountRepository -> mockAddAccountRepository
+
+//-ok
+makeLoadAccountByEmailRepository -> mockLoadAccountByEmailRepository
+
+//-ok
+makeLoadAccountByTokenRepositoryStub -> mockLoadAccountByTokenRepository
+
+//-ok
+makeUpdateAccessTokenRepository -> mockUpdateAccessTokenRepository
+
+//-ok
+makeFakeAuthentication -> mockAuthentication
