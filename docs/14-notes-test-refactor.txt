@@ -1,13 +1,24 @@
 
-//---
-mockFakeAccount -> mockAccountModel
+//---ok
+makeFakeAccount -> mockAccountModel
 
-//---
-mockFakeAccountData -> mockAddAccountParams
+//---ok
+makeFakeAccountData -> mockAddAccountParams
 
 //---ok
 .mockReturnValueOnce(new Promise((resolve, reject) => reject(new Error())))
 .mockImplementationOnce(() => { throw new Error() })
 .mockImplementationOnce(throwError)
 
-//--
+//--ok
+makeHasher -> mockHasher
+
+//--ok
+makeDecrypterStub -> mockDecrypter
+
+//--ok
+makeEncrypter -> mockEncrypter
+
+//--ok
+makeHashComparer -> mockHashComparer
+
