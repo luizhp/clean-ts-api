@@ -66,3 +66,33 @@ makeFakeSurveyResult -> mockSurveyResultModel
 
 //-ok
 makeFakeSurveyData -> mockAddSurveyParams
+
+//-ok
+makeEmailValidator -> mockEmailValidator
+
+//-infra-ok
+makeValidation -> mockValidation
+
+//-presentation-ok
+makeValidation -> mockValidation
+
+//-ok
+makeAuthentication -> mockAuthentication
+
+//-ok
+makeAddAccount -> mockAddAccount
+
+//-ok
+makeAddSurvey -> mockAddSurvey
+
+//-ok
+makeLoadSurveysStub -> mockLoadSurveys
+
+//-ok
+makeLoadSurveyById -> mockLoadSurveyById
+
+//-ok
+makeSaveSurveyResult -> mockSaveSurveyResult
+
+//-ok
+makeLoadAccountByToken -> mockLoadAccountByToken
