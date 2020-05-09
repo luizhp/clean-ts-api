@@ -63,3 +63,6 @@ makeFakeSurveyResultData -> mockSaveSurveyResultParams
 
 //-ok
 makeFakeSurveyResult -> mockSurveyResultModel
+
+//-ok
+makeFakeSurveyData -> mockAddSurveyParams
