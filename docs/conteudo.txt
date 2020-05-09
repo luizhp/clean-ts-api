@@ -262,6 +262,10 @@ Seção 23: Refactor
 80 - Reutilizando a criação de mocks
      14-notes-test-refactor.txt
 
+81 - Finalizando o refactor dos tests
+     14-notes-test-refactor.txt
+     15-merge-refactor-tests.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
