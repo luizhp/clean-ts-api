@@ -271,6 +271,11 @@ Seção 23: Refactor
 83 - Refatorando as Promises
      16-notes-find-replace.txt
 
+Seção 24: Bônus - Swagger
+
+84 - Integrando a nossa API com o Swagger
+     dependencias.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -310,6 +315,8 @@ URLs:
   https://www.npmjs.com/package/module-alias
   https://marketplace.visualstudio.com/items?itemName=natqe.reload
   https://www.npmjs.com/package/npm-check
+  https://swagger.io/docs/specification/basic-structure/
+  https://github.com/helmetjs/nocache
 
 
   Badges:

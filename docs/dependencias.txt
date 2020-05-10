@@ -549,3 +549,19 @@ Seção 21: Bônus, Aula 67 - Modularizando os paths dos imports
     https://github.com/ilearnio/module-alias
 
     npm install --save module-alias
+
+***********************************************
+Seção 24: Bônus - Swagger, Aula 84 - Integrando a nossa API com o Swagger
+
+ 1) Swagger
+    https://swagger.io/
+    https://swagger.io/docs/specification/about/
+
+    npm install --save swagger-ui-express
+    npm install -D @types/swagger-ui-express
+
+    http://localhost:5050/api-docs/
+
+    a) Helmetjs
+       copia dos elementos de nocache da página helmetjs
+       https://github.com/helmetjs/nocache
