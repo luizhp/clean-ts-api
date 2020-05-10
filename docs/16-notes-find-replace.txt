@@ -1,0 +1,6 @@
+Seção 23: Refactor, Aula 82 - Refatorando as Promises
+
+    Find text / replace with regular expression
+
+    find: new Promise\(resolve => resolve\((.*)\)\)
+    replace: Promise.resolve($1)

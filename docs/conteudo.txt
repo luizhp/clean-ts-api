@@ -266,6 +266,11 @@ Seção 23: Refactor
      14-notes-test-refactor.txt
      15-merge-refactor-tests.txt
 
+82 - Último ajuste do refactor
+
+83 - Refatorando as Promises
+     16-notes-find-replace.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
