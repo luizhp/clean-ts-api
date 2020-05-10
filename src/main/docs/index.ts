@@ -1,7 +1,6 @@
-import { loginPath } from '@/main/docs/paths/login-path'
-import { accountSchema } from '@/main/docs/schemas/account-schema'
-import { loginParamsSchema } from '@/main/docs/schemas/login-params-schema'
-import { errorSchema } from '@/main/docs/schemas/error-schema'
+import { loginPath } from './paths'
+import { badRequest, unauthorized, serverError, notFound } from './components'
+import { errorSchema, accountSchema, loginParamsSchema } from './schemas'
 
 export default {
   openapi: '3.0.0',
@@ -9,7 +8,15 @@ export default {
     title: 'Clean Node API',
     description:
       'API do curso do Mango para realizar enquetes entre programadores',
-    version: '1.0.0'
+    version: '1.0.0',
+    contact: {
+      name: 'Rodrigo Manguinho',
+      email: 'rodrigo.manguinho@gmail.com'
+    }
+  },
+  license: {
+    name: 'GPL-3.0-or-later',
+    url: 'https://spdx.org/licenses/GPL-3.0-or-later.html'
   },
   servers: [{
     url: '/api',
@@ -22,8 +29,14 @@ export default {
     '/login': loginPath
   },
   schemas: {
+    error: errorSchema,
     account: accountSchema,
-    loginParams: loginParamsSchema,
-    error: errorSchema
+    loginParams: loginParamsSchema
+  },
+  components: {
+    badRequest: badRequest,
+    unauthorized: unauthorized,
+    serverError: serverError,
+    notFound: notFound
   }
 }
