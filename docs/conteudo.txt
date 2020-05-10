@@ -276,6 +276,8 @@ Seção 24: Bônus - Swagger
 84 - Integrando a nossa API com o Swagger
      dependencias.txt
 
+85 - Criando docs para a API de Login
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
