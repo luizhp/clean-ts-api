@@ -278,6 +278,8 @@ Seção 24: Bônus - Swagger
 
 85 - Criando docs para a API de Login
 
+86 - Criando componentes reutilizáveis
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
