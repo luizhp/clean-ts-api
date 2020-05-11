@@ -300,6 +300,11 @@ Seção 25: LoadsurveyResult API
 
 91 - Alterando o retorno do SurveyResult
      19-notes-feat-load-surey-result-pendente.txt
+     ./images/19/**
+
+92 - Usando aggregation para retornar o resultado da enquete
+     20-notes.aggregation.txt
+     ./images/20-notes.aggregation.png
 
 -----------------
 URLs:
