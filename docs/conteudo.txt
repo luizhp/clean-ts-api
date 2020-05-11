@@ -272,7 +272,7 @@ Seção 23: Refactor
      16-notes-find-replace.txt
 
 Seção 24: Bônus - Swagger
-     
+
 84 - Integrando a nossa API com o Swagger
      dependencias.txt
      17-notes-swagger.txt
@@ -295,6 +295,11 @@ Seção 24: Bônus - Swagger
 90 - Criando docs para a API de Responder Enquete
      17-notes-swagger.txt
      18-merge-feat-swagger.txt
+
+Seção 25: LoadsurveyResult API
+
+91 - Alterando o retorno do SurveyResult
+     19-notes-feat-load-surey-result-pendente.txt
 
 -----------------
 URLs:
@@ -345,3 +350,4 @@ URLs:
     [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
     [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
     [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+    https://dependabot.com/

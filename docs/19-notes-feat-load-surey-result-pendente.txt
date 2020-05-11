@@ -1,0 +1,10 @@
+Seção 25: LoadsurveyResult API, Aula 91 - Alterando o retorno do SurveyResult
+
+        modified:   src/domain/models/survey-result.ts
+        modified:   src/domain/models/survey.ts
+        modified:   src/domain/test/mock-survey-result.ts
+        modified:   src/domain/usecases/survey-result/save-survey-result.ts
+        modified:   src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts
+        modified:   src/infra/db/mongodb/survey-result/survey-result-mongo-repository.ts
+
+        images do que foi modificado em /docs/images
