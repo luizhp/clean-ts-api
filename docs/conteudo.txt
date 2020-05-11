@@ -272,13 +272,18 @@ Seção 23: Refactor
      16-notes-find-replace.txt
 
 Seção 24: Bônus - Swagger
-
+     
 84 - Integrando a nossa API com o Swagger
      dependencias.txt
+     17-notes-swagger.txt
 
 85 - Criando docs para a API de Login
+     17-notes-swagger.txt
 
 86 - Criando componentes reutilizáveis
+     17-notes-swagger.txt
+
+87 - Criando doc para a API de Listar Enquetes com Autenticação
 
 -----------------
 URLs:

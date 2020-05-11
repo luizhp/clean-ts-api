@@ -1,0 +1,9 @@
+Seção 24: Bônus - Swagger
+
+  1) URL swagger:
+     http://localhost:5050/api-docs
+
+  2) dois terminais rodando em paralelo
+     enquanto se edita a documentação para o swagger
+     a) tsc --watch
+     b) npm run debug
