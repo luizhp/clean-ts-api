@@ -284,6 +284,10 @@ Seção 24: Bônus - Swagger
      17-notes-swagger.txt
 
 87 - Criando doc para a API de Listar Enquetes com Autenticação
+     17-notes-swagger.txt
+
+88 - Criando docs para a API de SignUp
+     17-notes-swagger.txt
 
 -----------------
 URLs:
