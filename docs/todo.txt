@@ -34,3 +34,39 @@
    Depois:
      secao22-aula78-03-objectid-vscode-grava-objectid.png
      secao22-aula78-04-objectid-mongodb-grava-objectid.png
+
+ 5) Checar se o surveyId (id) informado na URL /surveys/{surveyId}/results é valido.
+    Simplesmente retorna 500. Pois ao converter um id inválido,
+    exemplo: 5eb425698eaa2a992d43dc26x para new ObjectId(), dá erro
+    
+    Deveria testar o id em
+
+      presentation/controllers/survey-result/save-survey-result/save-survery-result-controller.ts
+      c/ teste: presentation/controllers/survey-result/save-survey-result/save-survery-result-controller.spec.ts
+
+          async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
+            try {
+              const { surveyId } = httpRequest.params
+              const { answer } = httpRequest.body
+              const { accountId } = httpRequest
+        --->  *** if (surveyId.match(id.match(/^[0-9a-fA-F]{24}$/))) { ...
+        ///// ou
+        --->  *** if (ObjectID.isValid(surveyId)) { ...
+              const survey = await this.loadSurveyById.loadById(surveyId)
+              if (survey) {
+      
+      ou
+      
+      infra/db/mongodb/survey/survey-mongo-repository
+      c/ teste: infra/db/mongodb/survey/survey-mongo-repository.spec.ts
+
+           async loadById (id: string): Promise<SurveyModel> {
+             const surveyCollection = await MongoHelper.getCollection('surveys')
+             const survey: SurveyModel = await surveyCollection.findOne({ _id: new ObjectId(id) })
+             return survey && MongoHelper.map(survey)
+           }
+
+    Observação:
+      http://localhost:5050/api/surveys/5eb425698eaa2a992d43dc26z/results
+      se validar esse caso do id, verificar se poderá retornar como erro de BadRequest,
+      pois só retorna Forbidden/Server Error

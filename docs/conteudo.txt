@@ -292,6 +292,10 @@ Seção 24: Bônus - Swagger
 89 - Criando docs para a API de Criar Enquete
      17-notes-swagger.txt
 
+90 - Criando docs para a API de Responder Enquete
+     17-notes-swagger.txt
+     18-merge-feat-swagger.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
