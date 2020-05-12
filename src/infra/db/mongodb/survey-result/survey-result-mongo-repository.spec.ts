@@ -1,6 +1,6 @@
 import { AccountModel } from '@/domain/models/account'
 import { SurveyModel } from '@/domain/models/survey'
-import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
+import { MongoHelper } from '@/infra/db/mongodb/helpers'
 import { SurveyResultMongoRepository } from './survey-result-mongo-repository'
 import { Collection, ObjectId } from 'mongodb'
 import { mockAddAccountParams } from '@/domain/test'
