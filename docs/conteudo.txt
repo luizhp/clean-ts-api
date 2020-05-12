@@ -306,6 +306,8 @@ Seção 25: LoadsurveyResult API
      20-notes.aggregation.txt
      ./images/20-notes.aggregation.png
 
+93 - Aplicando o Design Pattern Builder
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -347,6 +349,8 @@ URLs:
   https://www.npmjs.com/package/npm-check
   https://swagger.io/docs/specification/basic-structure/
   https://github.com/helmetjs/nocache
+  https://swagger.io/docs/
+  https://swagger.io/docs/specification/data-models/data-types/#numbers
 
 
   Badges:
