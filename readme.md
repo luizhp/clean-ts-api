@@ -51,6 +51,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Dependency Injection
 * Abstract Server
 * Composition Root
+* Builder
 
 > ## Metodologias e Designs
 
@@ -134,3 +135,17 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Mocks
 * Stubs
 * Spies
+
+> ## Features do MongoDb
+
+* Connect e Reconnect
+* Collections
+* InsertOne e InserMany
+* Find, FindOne e FindOneAndUpdate
+* DeleteMany
+* UpdateOne
+* Aggregation (Match, Group, Unwind, Lookup, AddFields, Project, Sort)
+* ObjectId
+* Upsert e ReturnOriginal
+* Push, Divide, Multiply, ArrayElemAt, Cond, Sum
+* Filter, Map, Reduce, MergeObjects, ConcatArrays
