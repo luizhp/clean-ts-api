@@ -1,0 +1,134 @@
+var carga = {
+  helpers: {
+    createRandomText: function (size = 10, possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
+      let text = "";
+      var i = 0;
+      for (; i < size; i++) {
+        possible = carga.helpers.shuffle(possible)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+
+      return text
+    },
+    shuffle: function (value) {
+      var a = value.split(""),
+        n = a.length;
+
+      for (var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+      }
+      return a.join("");
+    }
+  },
+  arma: {
+    account: function (nome = carga.helpers.createRandomText(10)) {
+      let data = {
+        "name": `Usuário: ${nome}`,
+        "email": `${nome.toLowerCase()}@teste.com`,
+        "password": "$2b$12$4qkstk4H3kE.0j8iinRDJuPAWGqYkHtEEft3DuBRMDYWe7b/d4X.W",
+        "rand": Math.random()
+      }
+      return data
+    },
+    answer: function (nome = carga.helpers.createRandomText(3)) {
+      let data = {
+        answer: `Choice: ${nome}`
+      }
+      if (carga.helpers.createRandomText(1, "01") === "1") {
+        data.image = `http://${nome.toLowerCase()}.com`
+      }
+      return data
+    },
+    answers: function () {
+      let answers = []
+      var size = carga.helpers.createRandomText(1, "34567")
+      for (var i = 0; i < size; i++) {
+        answers.push(carga.arma.answer(carga.helpers.createRandomText(3)))
+      }
+      return answers
+    },
+    surveys: function (nome = carga.helpers.createRandomText(5)) {
+      let data = {
+        "question": `My Question: ${nome}`,
+        "answers": carga.arma.answers(),
+        "date": new Date()
+      }
+      return data
+    }
+  },
+  db: {
+    insere: {
+      account: function (quantidade) {
+        for (var i = 0; i < quantidade; i++) {
+          db.account.insertOne(carga.arma.account())
+        }
+      },
+      surveys: function (quantidade) {
+        for (var i = 0; i < quantidade; i++) {
+          db.surveys.insertOne(carga.arma.surveys())
+        }
+      },
+      surveyResults: function () {
+        var pipeline = [{
+          $lookup: {
+            from: 'surveys',
+            let: {
+              accountId: "$_id"
+            },
+            pipeline: [{
+              $match: {
+                $expr: {
+                  $ne: [0, 1]
+                }
+              }
+            }],
+            as: 'results'
+          }
+        }, {
+          $unwind: {
+            path: '$results'
+          }
+        }, {
+          $addFields: {
+            rand: {
+              $floor: { $multiply: ["$rand", { $size: "$results.answers.answer" }] }
+            }
+          }
+        }, {
+          $project: {
+            _id: 0,
+            accountId: "$_id",
+            surveyId: "$results._id",
+            answer: {
+              $arrayElemAt: ["$results.answers.answer", "$rand"]
+            },
+            date: new Date()
+          }
+        }, {
+          $out: "surveyResults"
+        }]
+        db.account.aggregate(pipeline)
+      },
+    },
+    limpaCollections: function () {
+      db.account.drop()
+      db.surveys.drop()
+      db.surveyResults.drop()
+    },
+    criaIndices: function () {
+      db.surveyResults.createIndex({ surveyId: 1 })
+    }
+  },
+  gera: function (quantidadeAccounts = 1, quantidadeSurveys = 1) {
+    carga.db.limpaCollections()
+    carga.db.insere.account(quantidadeAccounts)
+    carga.db.insere.surveys(quantidadeSurveys)
+    carga.db.insere.surveyResults()
+    carga.db.criaIndices()
+  }
+}
+
+// carga.gera(10, 10)

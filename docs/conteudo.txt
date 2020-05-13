@@ -308,6 +308,10 @@ Seção 25: LoadsurveyResult API
 
 93 - Aplicando o Design Pattern Builder
 
+94 - Correção no Aggregation do resultado da enquete
+     20-notes.aggregation.txt
+     todo.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats

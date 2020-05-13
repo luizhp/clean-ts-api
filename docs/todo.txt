@@ -70,3 +70,106 @@
       http://localhost:5050/api/surveys/5eb425698eaa2a992d43dc26z/results
       se validar esse caso do id, verificar se poderá retornar como erro de BadRequest,
       pois só retorna Forbidden/Server Error
+
+  6)  Seção 25: LoadsurveyResult API, Aula 94 - Correção no Aggregation do resultado da enquete
+      query luizhp - loadBySurveyIdLuizHP - infra/db/mongodb/survey-result/survey-result-mongo-repository.ts
+
+      db.surveys.aggregate([
+         {
+            $match: {
+                _id: ObjectId("5eb425698eaa2a992d43dc26")
+            }
+         },
+         {
+             $unwind: {
+                 path: "$answers"
+              }
+         },
+         {
+             $lookup: {
+                 from: 'surveyResults',
+                 let: { 
+                     id: "$_id",
+                     answer: "$answers.answer"
+                 },
+                 pipeline: [{
+                  $match: {
+                      $expr: { 
+                          $and: [
+                            { $eq: ["$surveyId", "$$id"] },
+                            { $eq: ["$answer", "$$answer"] },
+                          ]
+                      }
+                  }
+                 }],
+                 as: 'results'
+             }
+         }, {
+            $group: {
+                _id: 0,
+                data: {
+                    $push: "$$ROOT"
+                },
+                total: {
+                    $sum: {
+                        $size: "$results"
+                    }
+                }
+            }
+         },
+         {
+             $unwind: {
+                 path: "$data"
+              }
+         }, {
+             $addFields: {
+                 count: {
+                     $size: "$data.results"
+                 },
+                 percent: {
+                     $multiply: [{
+                         $divide: [{$size: "$data.results"}, "$total"]
+                     }, 100]
+                 }
+             }
+         },{
+             $sort: { 'count': -1 }
+         },
+         {
+             $project: {
+                 _id: 0,
+                 surveyId: "$data._id",
+                 question: "$data.question",
+                 date: "$data.date",
+                 answers: {
+                     image: "$data.answers.image",
+                    answer: "$data.answers.answer",
+                    count: "$count",
+                    percent: "$percent"
+                 }                 
+             }
+         },{
+             $group: {
+                 _id: {
+                     surveyId: "$surveyId",
+                     question: "$question",
+                     date: "$date"
+                 },
+                 answers: {
+                     $push: "$answers"
+                 }
+             }
+         },
+         {
+             $project: {
+                 _id: 0,
+                 surveyId: "$_id.surveyId",
+                 question: "$_id.question",
+                 date: "$_id.date",
+                 answers: "$answers"
+                 
+             }
+         }
+      ])
+
+
