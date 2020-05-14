@@ -1,0 +1,102 @@
+└─▶ git merge feat/load-survey-result
+Updating 35c3edd..139546d
+Fast-forward
+ .vscode/Jest Test Describe block Snippet from Mango.code-snippets                                                                    |  16 +++++
+ docs/19-notes-feat-load-surey-result-pendente.txt                                                                                    |  10 +++
+ docs/20-notes.aggregation.txt                                                                                                        | 264 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ docs/21-notes-script-gera-collections.txt                                                                                            | 134 ++++++++++++++++++++++++++++++++++++
+ docs/conteudo.txt                                                                                                                    |  33 ++++++++-
+ docs/images/19/01-survey-result.ts.png                                                                                               | Bin 0 -> 111343 bytes
+ docs/images/19/02-survey.ts.png                                                                                                      | Bin 0 -> 48873 bytes
+ docs/images/19/03-mock-survey-result.ts.png                                                                                          | Bin 0 -> 199931 bytes
+ docs/images/19/04-save-survey-result.ts.png                                                                                          | Bin 0 -> 102246 bytes
+ docs/images/19/05-01-survey-result-mongo-repository.spec.ts.png                                                                      | Bin 0 -> 225371 bytes
+ docs/images/19/05-02-survey-result-mongo-repository.spec.ts.png                                                                      | Bin 0 -> 301264 bytes
+ docs/images/19/05-03-survey-result-mongo-repository.spec.ts.png                                                                      | Bin 0 -> 213113 bytes
+ docs/images/19/06-survey-result-mongo-repository.ts.png                                                                              | Bin 0 -> 167125 bytes
+ docs/images/20-notes.aggregation.png                                                                                                 | Bin 0 -> 128188 bytes
+ docs/todo.txt                                                                                                                        | 208 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ readme.md                                                                                                                            |  17 ++++-
+ requirements/load-survey-result.md                                                                                                   |  13 ++--
+ src/data/protocols/db/survey-result/load-survey-result-repository.ts                                                                 |   5 ++
+ src/data/protocols/db/survey-result/save-survey-result-repository.ts                                                                 |   3 +-
+ src/data/test/mock-db-account.ts                                                                                                     |   2 +-
+ src/data/test/mock-db-survey-result.ts                                                                                               |  16 ++++-
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result-protocols.ts                                                |   4 ++
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts                                                     |  67 ++++++++++++++++++
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result.ts                                                          |  25 +++++++
+ src/data/usecases/survey-result/save-survey-result/db-save-survey-result-protocols.ts                                                |   1 +
+ src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts                                                     |  26 +++++--
+ src/data/usecases/survey-result/save-survey-result/db-save-survey-result.ts                                                          |  10 ++-
+ src/domain/models/survey-result.ts                                                                                                   |  12 +++-
+ src/domain/models/survey.ts                                                                                                          |   2 +-
+ src/domain/test/mock-survey-result.ts                                                                                                |  16 ++++-
+ src/domain/test/mock-survey.ts                                                                                                       |   4 +-
+ src/domain/usecases/survey-result/load-survey-result.ts                                                                              |   5 ++
+ src/domain/usecases/survey-result/save-survey-result.ts                                                                              |   7 +-
+ src/infra/db/mongodb/account/account-mongo-repository.spec.ts                                                                        |   2 +-
+ src/infra/db/mongodb/account/account-mongo-repository.ts                                                                             |   2 +-
+ src/infra/db/mongodb/helpers/index.ts                                                                                                |   2 +
+ src/infra/db/mongodb/helpers/query-builder.ts                                                                                        |  56 +++++++++++++++
+ src/infra/db/mongodb/log/log-mongo-repository.spec.ts                                                                                |   2 +-
+ src/infra/db/mongodb/log/log-mongo-repository.ts                                                                                     |   2 +-
+ src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts                                                            |  79 ++++++++++++++++-----
+ src/infra/db/mongodb/survey-result/survey-result-mongo-repository.ts                                                                 | 177 ++++++++++++++++++++++++++++++++++++++++++++---
+ src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts                                                                          |   2 +-
+ src/infra/db/mongodb/survey/survey-mongo-repository.ts                                                                               |   2 +-
+ src/main/decorators/log-controller-decorator.spec.ts                                                                                 |  14 ++--
+ src/main/docs/index.ts                                                                                                               |  26 ++++---
+ src/main/docs/paths/survey-result-path.ts                                                                                            |  43 +++++++++++-
+ src/main/docs/schemas.ts                                                                                                             |   4 +-
+ src/main/docs/schemas/index.ts                                                                                                       |   1 +
+ src/main/docs/schemas/survey-result-answer-schema.ts                                                                                 |  20 ++++++
+ src/main/docs/schemas/survey-result-schema.ts                                                                                        |  15 ++--
+ src/main/factories/controllers/survey-result/load-survey-result/load-survey-result-controller-factory.ts                             |  10 +++
+ src/main/factories/controllers/survey-result/save-survey-result/save-survey-result-controller-factory.ts                             |   2 +-
+ src/main/factories/usecases/survey-result/load-survey-result/db-load-survey-result-factory.ts                                        |  10 +++
+ src/main/factories/usecases/survey-result/save-survey-result/db-save-survey-result-factory.ts                                        |   2 +-
+ src/main/routes/login-routes.test.ts                                                                                                 |   2 +-
+ src/main/routes/survey-result-routes.test.ts                                                                                         |  29 +++++++-
+ src/main/routes/survey-result-routes.ts                                                                                              |   2 +
+ src/main/routes/survey-routes.test.ts                                                                                                |   2 +-
+ src/main/server.ts                                                                                                                   |   2 +-
+ src/presentation/controllers/login/signup/signup-controller.spec.ts                                                                  |  18 ++---
+ src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller-protocols.ts                             |   3 +
+ src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts                                  |  81 ++++++++++++++++++++++
+ src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.ts                                       |  24 +++++++
+ .../survey-result/save-survey-result/{save-survery-result-controller-protocols.ts => save-survey-result-controller-protocols.ts}     |   0
+ .../controllers/survey-result/save-survey-result/{save-survery-result-controller.spec.ts => save-survey-result-controller.spec.ts}   |  18 ++---
+ .../controllers/survey-result/save-survey-result/{save-survery-result-controller.ts => save-survey-result-controller.ts}             |   2 +-
+ src/presentation/controllers/survey/add-survey/add-survery-controller.spec.ts                                                        |  12 ++--
+ src/presentation/middlewares/auth-middleware.spec.ts                                                                                 |  12 ++--
+ src/presentation/test/mock-survey-result.ts                                                                                          |  10 +++
+ 69 files changed, 1464 insertions(+), 126 deletions(-)
+ create mode 100644 .vscode/Jest Test Describe block Snippet from Mango.code-snippets
+ create mode 100644 docs/19-notes-feat-load-surey-result-pendente.txt
+ create mode 100644 docs/20-notes.aggregation.txt
+ create mode 100644 docs/21-notes-script-gera-collections.txt
+ create mode 100644 docs/images/19/01-survey-result.ts.png
+ create mode 100644 docs/images/19/02-survey.ts.png
+ create mode 100644 docs/images/19/03-mock-survey-result.ts.png
+ create mode 100644 docs/images/19/04-save-survey-result.ts.png
+ create mode 100644 docs/images/19/05-01-survey-result-mongo-repository.spec.ts.png
+ create mode 100644 docs/images/19/05-02-survey-result-mongo-repository.spec.ts.png
+ create mode 100644 docs/images/19/05-03-survey-result-mongo-repository.spec.ts.png
+ create mode 100644 docs/images/19/06-survey-result-mongo-repository.ts.png
+ create mode 100644 docs/images/20-notes.aggregation.png
+ create mode 100644 src/data/protocols/db/survey-result/load-survey-result-repository.ts
+ create mode 100644 src/data/usecases/survey-result/load-survey-result/db-load-survey-result-protocols.ts
+ create mode 100644 src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts
+ create mode 100644 src/data/usecases/survey-result/load-survey-result/db-load-survey-result.ts
+ create mode 100644 src/domain/usecases/survey-result/load-survey-result.ts
+ create mode 100644 src/infra/db/mongodb/helpers/index.ts
+ create mode 100644 src/infra/db/mongodb/helpers/query-builder.ts
+ create mode 100644 src/main/docs/schemas/survey-result-answer-schema.ts
+ create mode 100644 src/main/factories/controllers/survey-result/load-survey-result/load-survey-result-controller-factory.ts
+ create mode 100644 src/main/factories/usecases/survey-result/load-survey-result/db-load-survey-result-factory.ts
+ create mode 100644 src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller-protocols.ts
+ create mode 100644 src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts
+ create mode 100644 src/presentation/controllers/survey-result/load-survey-result/load-survey-result-controller.ts
+ rename src/presentation/controllers/survey-result/save-survey-result/{save-survery-result-controller-protocols.ts => save-survey-result-controller-protocols.ts} (100%)
+ rename src/presentation/controllers/survey-result/save-survey-result/{save-survery-result-controller.spec.ts => save-survey-result-controller.spec.ts} (86%)
+ rename src/presentation/controllers/survey-result/save-survey-result/{save-survery-result-controller.ts => save-survey-result-controller.ts} (94%)

@@ -322,6 +322,9 @@ Seção 25: LoadsurveyResult API
 
 99 - Criando o LoadSurveyResult Controller
 
+100 - Fazendo a composição do LoadSurveyResult
+      22-merge-feat-load-survey-result.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
