@@ -1,9 +1,9 @@
 import { throwError, mockSurveyResultModel } from '@/domain/test'
-import { HttpRequest, LoadSurveyById, SaveSurveyResult } from './save-survery-result-controller-protocols'
+import { HttpRequest, LoadSurveyById, SaveSurveyResult } from './save-survey-result-controller-protocols'
 import { InvalidParamError } from '@/presentation/errors'
 import { forbidden, serverError, ok } from '@/presentation/helpers/http/http-helper'
 import { mockLoadSurveyById, mockSaveSurveyResult } from '@/presentation/test'
-import { SaveSurveyResultController } from './save-survery-result-controller'
+import { SaveSurveyResultController } from './save-survey-result-controller'
 import MockDate from 'mockdate'
 
 const mockRequest = (): HttpRequest => ({
