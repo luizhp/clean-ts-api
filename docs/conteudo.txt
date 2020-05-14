@@ -318,6 +318,8 @@ Seção 25: LoadsurveyResult API
 
 97 - Mudança no método de salvar resposta da enquete
 
+98 - Corrigindo outro bug identificado
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats

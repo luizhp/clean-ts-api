@@ -75,101 +75,102 @@
       query luizhp - loadBySurveyIdLuizHP - infra/db/mongodb/survey-result/survey-result-mongo-repository.ts
 
       db.surveys.aggregate([
-         {
-            $match: {
-                _id: ObjectId("5eb425698eaa2a992d43dc26")
-            }
-         },
-         {
-             $unwind: {
-                 path: "$answers"
-              }
-         },
-         {
-             $lookup: {
-                 from: 'surveyResults',
-                 let: { 
-                     id: "$_id",
-                     answer: "$answers.answer"
-                 },
-                 pipeline: [{
-                  $match: {
-                      $expr: { 
-                          $and: [
-                            { $eq: ["$surveyId", "$$id"] },
-                            { $eq: ["$answer", "$$answer"] },
-                          ]
-                      }
+        {
+          $match: {
+            _id: ObjectId("5ebca4be20099e36eebdb534")
+          }
+        },
+        {
+          $unwind: {
+            path: "$answers"
+          }
+        },
+        {
+          $lookup: {
+            from: 'surveyResults',
+            let: {
+              id: "$_id",
+              answer: "$answers.answer"
+            },
+            pipeline: [
+              {
+                $match: {
+                  $expr: {
+                    $and: [
+                      {$eq: ["$surveyId","$$id"]},
+                      {$eq: ["$answer","$$answer"]},
+                    ]
                   }
-                 }],
-                 as: 'results'
-             }
-         }, {
-            $group: {
-                _id: 0,
-                data: {
-                    $push: "$$ROOT"
-                },
-                total: {
-                    $sum: {
-                        $size: "$results"
-                    }
                 }
-            }
-         },
-         {
-             $unwind: {
-                 path: "$data"
               }
-         }, {
-             $addFields: {
-                 count: {
-                     $size: "$data.results"
-                 },
-                 percent: {
-                     $multiply: [{
-                         $divide: [{$size: "$data.results"}, "$total"]
-                     }, 100]
-                 }
-             }
-         },{
-             $sort: { 'count': -1 }
-         },
-         {
-             $project: {
-                 _id: 0,
-                 surveyId: "$data._id",
-                 question: "$data.question",
-                 date: "$data.date",
-                 answers: {
-                     image: "$data.answers.image",
-                    answer: "$data.answers.answer",
-                    count: "$count",
-                    percent: "$percent"
-                 }                 
-             }
-         },{
-             $group: {
-                 _id: {
-                     surveyId: "$surveyId",
-                     question: "$question",
-                     date: "$date"
-                 },
-                 answers: {
-                     $push: "$answers"
-                 }
-             }
-         },
-         {
-             $project: {
-                 _id: 0,
-                 surveyId: "$_id.surveyId",
-                 question: "$_id.question",
-                 date: "$_id.date",
-                 answers: "$answers"
-                 
-             }
-         }
+            ],
+            as: 'results'
+          }
+        },
+        {
+          $group: {
+            _id: 0,
+            data: {$push: "$$ROOT"},
+            total: {
+              $sum: {$size: "$results"}
+            }
+          }
+        },
+        {
+          $unwind: {path: "$data"}
+        },
+        {
+          $addFields: {
+            count: {$size: "$data.results"},
+            percent: {
+              $cond: {
+                if: {$eq: ["$total",0]},
+                then: 0,
+                else: {
+                  $multiply: [{$divide: [{$size: "$data.results"},"$total"]},100]
+                }
+              }
+            }
+          }
+        },
+        {
+          $sort: {'count': -1}
+        },
+        {
+          $project: {
+            _id: 0,
+            surveyId: "$data._id",
+            question: "$data.question",
+            date: "$data.date",
+            answers: {
+              image: "$data.answers.image",
+              answer: "$data.answers.answer",
+              count: "$count",
+              percent: "$percent"
+            }
+          }
+        },
+        {
+          $group: {
+            _id: {
+              surveyId: "$surveyId",
+              question: "$question",
+              date: "$date"
+            },
+            answers: {
+              $push: "$answers"
+            }
+          }
+        },
+        {
+          $project: {
+            _id: 0,
+            surveyId: "$_id.surveyId",
+            question: "$_id.question",
+            date: "$_id.date",
+            answers: "$answers"
+          }
+        }
       ])
 
       -- ** --
@@ -220,9 +221,26 @@
               $size: '$data.results'
             },
             percent: {
-              $multiply: [{
-                $divide: [{ $size: '$data.results' }, '$total']
-              }, 100]
+              $cond: {
+                if: {
+                  $eq: [
+                    "$total",
+                    0
+                  ]
+                }, then: 0, else: {
+                  $multiply: [
+                    {
+                      $divide: [
+                        {
+                          $size: "$data.results"
+                        },
+                        "$total"
+                      ]
+                    },
+                    100
+                  ]
+                }
+              }
             }
           })
           .sort({ count: -1 })
