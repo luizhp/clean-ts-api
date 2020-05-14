@@ -316,6 +316,8 @@ Seção 25: LoadsurveyResult API
 
 96 - Incluindo o LoadSurveyResultRepository ao SurveyResultMongoRepository
 
+97 - Mudança no método de salvar resposta da enquete
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
