@@ -314,6 +314,8 @@ Seção 25: LoadsurveyResult API
 
 95 - Criando o LoadSurveyResult UseCase
 
+96 - Incluindo o LoadSurveyResultRepository ao SurveyResultMongoRepository
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
