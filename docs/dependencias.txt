@@ -574,3 +574,6 @@ Seção 26: Bônus, Aula 103. Migrando de Stub para Spy
     https://github.com/marak/Faker.js/
 
     npm install -D faker
+    npm install -D @types/faker
+
+    https://www.npmjs.com/package/@types/faker
