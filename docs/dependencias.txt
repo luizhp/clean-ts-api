@@ -196,7 +196,8 @@ Seção 2, Aula 7 - Problema identificado em biblioteca
    chamar com:
    npm-check -s -u
 
-3) sudo apt install eslint
+3) npm install -g eslint@6.8.0
+   npm install -g eslint
 
 
 ***********************************************
@@ -577,3 +578,13 @@ Seção 26: Bônus, Aula 103. Migrando de Stub para Spy
     npm install -D @types/faker
 
     https://www.npmjs.com/package/@types/faker
+
+***********************************************
+Seção 26: Bônus, Aula: 104 - Servindo arquivos estáticos
+
+ 1) copyfiles
+    https://www.npmjs.com/package/copyfiles
+    https://github.com/calvinmetcalf/copyfiles#readme
+
+    npm install -D copyfiles
+

@@ -336,6 +336,10 @@ Seção 26: Bônus
       dependencias.txt
       23-merge-refactor-faker.txt
 
+104 - Servindo arquivos estáticos
+      dependencias.txt
+      25-notes.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
@@ -380,6 +384,7 @@ URLs:
   https://swagger.io/docs/
   https://swagger.io/docs/specification/data-models/data-types/#numbers
   https://www.npmjs.com/package/faker
+  https://www.npmjs.com/package/copyfiles
 
 
   Badges:

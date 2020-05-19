@@ -1,0 +1,19 @@
+Seção 26: Bônus, Aula: 104 - Servindo arquivos estáticos
+   vídeo_aula:
+   (7:29) https://www.udemy.com/course/tdd-com-mango/learn/lecture/19860244
+
+   pre/post exemplo
+   
+   caso rode o npm run build, ele irá buscar o prebuild / postbuild (se existirem)
+   e irá executar o prebuild antes e o postbuild depois
+   
+   {
+     "name": "npm-scripts-example",
+     "version": "1.0.0",
+     "description": "npm scripts example",
+     "scripts": {
+       "prebuild": "echo I run before the build script",
+       "build": "cross-env NODE_ENV=production webpack",
+       "postbuild": "echo I run after the build script"
+     }
+   }
