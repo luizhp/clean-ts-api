@@ -2,7 +2,7 @@ import { throwError, mockAuthenticationParams } from '@/domain/test'
 import { badRequest, serverError, unauthorized, ok } from '@/presentation/helpers/http/http-helper'
 import { MissingParamError } from '@/presentation/errors'
 import { AuthenticationSpy, ValidationSpy } from '@/presentation/test'
-import { HttpRequest } from './login-controller-protocols'
+import { HttpRequest } from '@/presentation/protocols'
 import { LoginController } from './login-controller'
 import faker from 'faker'
 

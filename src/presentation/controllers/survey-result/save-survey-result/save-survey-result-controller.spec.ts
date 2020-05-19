@@ -1,5 +1,5 @@
 import { throwError } from '@/domain/test'
-import { HttpRequest } from './save-survey-result-controller-protocols'
+import { HttpRequest } from '@/presentation/protocols'
 import { InvalidParamError } from '@/presentation/errors'
 import { forbidden, serverError, ok } from '@/presentation/helpers/http/http-helper'
 import { SaveSurveyResultSpy, LoadSurveyByIdSpy } from '@/presentation/test'

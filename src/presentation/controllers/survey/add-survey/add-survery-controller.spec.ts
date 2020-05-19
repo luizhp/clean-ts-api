@@ -1,7 +1,7 @@
 import { throwError } from '@/domain/test'
 import { badRequest, serverError, noContent } from '@/presentation/helpers/http/http-helper'
 import { ValidationSpy, AddSurveySpy } from '@/presentation/test'
-import { HttpRequest } from './add-survey-controller-protocols'
+import { HttpRequest } from '@/presentation/protocols'
 import { AddSurveyController } from './add-survey-controller'
 import MockDate from 'mockdate'
 import faker from 'faker'
