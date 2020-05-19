@@ -1,4 +1,4 @@
-Seção 23: Refactor, Aula 82 - Refatorando as Promises
+Seção 23: Refactor, Aula 84 - Refatorando as Promises
 
     Find text / replace with regular expression
 

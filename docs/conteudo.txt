@@ -28,302 +28,308 @@ Seção 2: Bônus
 
 Seção 3: SignUp API - Presentation Layer
 
-08 - Criando o SignUpController e validando o request
+10 - Criando o SignUpController e validando o request
      02-notes.txt
      clean-architecture-diagram-signup.pdf
 
-09 - Criando erros personalizados
+11 - Criando erros personalizados
      02-notes.txt
 
-10 - Utilizando Mocks da maneira correta
+12 - Utilizando Mocks da maneira correta
      02-notes.txt
 
-11 - Testando exceções e integrando com o EmailValidator
+13 - Testando exceções e integrando com o EmailValidator
 
-12 - Integrando com o AddAccount Usecase
+14 - Integrando com o AddAccount Usecase
 
 
 Seção 4: Jest
 
-13 - Configurando o Jest e criando scripts de test
+15 - Configurando o Jest e criando scripts de test
      03-notes.txt
 
 
 Seção 5: Utils Layer
 
-14 - Criando o EmailValidatorAdapter e mockando o validator
+16 - Criando o EmailValidatorAdapter e mockando o validator
      dependencias.txt
 
 
 Seção 6: SignUp API - Data Layer
 
-15 - Criando o DbAddAccount e Integrando com o Encrypter
+17 - Criando o DbAddAccount e Integrando com o Encrypter
 
-16 - Integrando com o AddAccountRepository
+18 - Integrando com o AddAccountRepository
 
 
 Seção 7: SignUp API - Infra Layer
 
-17 - Criando o BcryptAdapter e mockando o bcrypt
+19 - Criando o BcryptAdapter e mockando o bcrypt
      dependencias.txt
 
-18 - Configurando MongoDb em memória
+20 - Configurando MongoDb em memória
      dependencias.txt
      01-02-git.txt (sobre git stash)
 
-19 - Testando o MongoDb
+21 - Testando o MongoDb
 
 
 Seção 8: SignUp API - Main Layer
 
-20 - Testando middlewares do express
+22 - Testando middlewares do express
      dependencias.txt
 
-21 - Criando teste de integração para o SignUp
+23 - Criando teste de integração para o SignUp
      dependencias.txt
 
-22 - Fazendo a composição do SignUp e desacoplando do express
+24 - Fazendo a composição do SignUp e desacoplando do express
 
 
 Seção 9: Bônus
 
-23 - Testando a conexão com o MongoDb
+25 - Testando a conexão com o MongoDb
 
-24 - Aplicando o Design Pattern Decorator
+26 - Aplicando o Design Pattern Decorator
 
-25 - Adicionando Log de Erro
+27 - Adicionando Log de Erro
 
-26 - Refatorando os testes
+28 - Refatorando os testes
 
-27 - Persistindo Log de Erro no MongoDb
+29 - Persistindo Log de Erro no MongoDb
 
-28 - Criando Tag e fazendo Push para o GitHub
+30 - Criando Tag e fazendo Push para o GitHub
 
 
 Seção 10: Login API - Presentation Layer
 
-29 - Criando o LoginController e validando o request
+31 - Criando o LoginController e validando o request
 
-30 - Testando a integração do LoginController com o Authentication Usecase
+32 - Testando a integração do LoginController com o Authentication Usecase
 
-31 - Aplicando o Design Pattern Composite 1/3
+33 - Aplicando o Design Pattern Composite 1/3
 
-32 - Aplicando o Design Pattern Composite 2/3
+34 - Aplicando o Design Pattern Composite 2/3
 
-33 - Aplicando o Design Pattern Composite 3/3
+35 - Aplicando o Design Pattern Composite 3/3
 
-34 - Refatorando o código
+36 - Refatorando o código
 
 
 Seção 11: Login API - Data Layer
 
-35 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
+37 - Criando o DbAuthentication e integrando com o LoadAccountByEmailRepository
 
-36 - Integrando o DbAuthentication com mais 3 dependências
+38 - Integrando o DbAuthentication com mais 3 dependências
 
 
 Seção 12: Bônus
 
-37 - Segurança
+39 - Segurança
 
 
 Seção 13: Login API - Infra Layer
 
-38 - Incluindo o HashComparer ao BcryptAdapter
+40 - Incluindo o HashComparer ao BcryptAdapter
 
-39 - Criando o JwtAdapter e mockando o jsonwebtoken
+41 - Criando o JwtAdapter e mockando o jsonwebtoken
      dependencias.txt
 
-40 - Incluindo mais duas interfaces no AccountMongoRepository
+42 - Incluindo mais duas interfaces no AccountMongoRepository
 
 Seção 14: Login API - Main Layer
 
-41 - Refatorando o projeto
+43 - Refatorando o projeto
 
-42 - Fazendo a composição do Login
+44 - Fazendo a composição do Login
      todo: 04-middlewares.txt
      01-02-git.txt
 
 Seção 15: Bônus
 
-43 - Subindo a API para o Heroku
+45 - Subindo a API para o Heroku
      dependencias.txt
 
-44 - Gerando uma imagem da API com Docker
+46 - Gerando uma imagem da API com Docker
      dependencias.txt
 
-45 - Organizando as imagens e containers com Docker Compose
+47 - Organizando as imagens e containers com Docker Compose
      dependencias.txt
 
-46 - Debugando API com breakpoint
+48 - Debugando API com breakpoint
      05-debug.txt
 
-47 - Usando Nodemon no Docker com Typescript
+49 - Usando Nodemon no Docker com Typescript
      dependencias.txt
      06-nodemon.txt
 
-48 - Adicionando documentação com casos de uso
+50 - Adicionando documentação com casos de uso
      07-notes.txt
 
 Seção 16: SignUp API - Ajustes
 
-49 - Alterando o SignUp para retornar um token de acesso
+51 - Alterando o SignUp para retornar um token de acesso
 
-50 - Impedindo a criação de contas com Email existente
+52 - Impedindo a criação de contas com Email existente
 
-51 - Refatorando a arquitetura
+53 - Refatorando a arquitetura
 
 Seção 17: AddSurvey API
 
-52 - Criando o AddSurveyController
+54 - Criando o AddSurveyController
 
-53 - Criando o SurveyMongoRepository
+55 - Criando o SurveyMongoRepository
 
-54 - Criando o SurveyMongoRepository
+56 - Criando o SurveyMongoRepository
 
-55 - Criando a composição do AddSurvey
+57 - Criando a composição do AddSurvey
 
 Seção 18: Criando Middleware de Autenticação
      08-merge-middleware.txt
 
-56 - Criando o AuthMiddleware e fazendo os primeiros testes
+58 - Criando o AuthMiddleware e fazendo os primeiros testes
 
-57 - Finalizando os testes do AuthMiddleware
+59 - Finalizando os testes do AuthMiddleware
 
-58 - Criando o DbLoadAccountByToken
+60 - Criando o DbLoadAccountByToken
 
-59 - Implementando a interface Decrypter no JwtAdapter
+61 - Implementando a interface Decrypter no JwtAdapter
 
-60 - Implementando a interface LoadAccountByToken no AccountMongoRepository
+62 - Implementando a interface LoadAccountByToken no AccountMongoRepository
 
-61 - Aplicando o AuthMiddleware na rota de criar enquete
+63 - Aplicando o AuthMiddleware na rota de criar enquete
 
 Seção 19: Bônus
 
-62 - Continuous Integration & Continuous Delivery
+64 - Continuous Integration & Continuous Delivery
      dependencias.txt
 
 Seção 20: LoadSurveys API
 
-63 - Criando o LoadSurveysController
+65 - Criando o LoadSurveysController
      dependencias.txt
      01-02-git.txt
      09-notes-loadsurveys-01-presentation-steps.txt
 
-64 - Criando o DbLoadSurveys UseCase
+66 - Criando o DbLoadSurveys UseCase
      09-notes-loadsurveys-02-data-steps.txt
 
-65 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
+67 - Incluindo o LoadSurveysRepository ao SurveyMongoRepository
      09-notes-loadsurveys-03-infra-steps.txt
 
-66 - Criando a composição do LoadSurveys
+68 - Criando a composição do LoadSurveys
      09-notes-loadsurveys-04-main-steps.txt
      09-notes-loadsurveys-05-merge.txt
 
 Seção 21: Bônus
 
-67 - Modularizando os paths dos imports
+69 - Modularizando os paths dos imports
      dependencias.txt
      10-merge-import-paths
 
-68 - Utilizando Type Alias
+70 - Utilizando Type Alias
      01-02-git.txt (como consertou falta de git merge antes de fazer criação de nova tag)
      11-notes.txt
 
-69 - Usando Utility Types do Typescript
+71 - Usando Utility Types do Typescript
      12-notes-omit-type-utility.txt
 
 Seção 22: SaveSurveyResult API
 
-70 - Criando os Models e UseCases
+72 - Criando os Models e UseCases
 
-71 - Criando o DbLoadSurveyById UseCase
+73 - Criando o DbLoadSurveyById UseCase
 
-72 - Criando o DbSaveSurveyResult UseCase
+74 - Criando o DbSaveSurveyResult UseCase
 
-73 - Incluindo o LoadSurveyByIdRepository ao SurveyResultMongoRepository
+75 - Incluindo o LoadSurveyByIdRepository ao SurveyResultMongoRepository
 
-74 - Incluindo o SaveSurveyResultRepository ao SurveyResultMongoRepository
+76 - Incluindo o SaveSurveyResultRepository ao SurveyResultMongoRepository
 
-75 - Refactor - Organizando pastas
+77 - Refactor - Organizando pastas
 
-76 - Criando o SaveSurveyResult Controller 1/2
+78 - Criando o SaveSurveyResult Controller 1/2
 
-77 - Criando o SaveSurveyResult Controller 2/2
+79 - Criando o SaveSurveyResult Controller 2/2
 
-78 - Fazendo a composição do SaveSurveyResult
+80 - Fazendo a composição do SaveSurveyResult
      13-merge-feat-add-survey-result.txt
 
 Seção 23: Refactor
 
-79 - Padronizando nomenclaturas
+81 - Padronizando nomenclaturas
      14-notes-test-refactor.txt
 
-80 - Reutilizando a criação de mocks
+82 - Reutilizando a criação de mocks
      14-notes-test-refactor.txt
 
-81 - Finalizando o refactor dos tests
+83 - Finalizando o refactor dos tests
      14-notes-test-refactor.txt
      15-merge-refactor-tests.txt
 
-82 - Último ajuste do refactor
+84 - Último ajuste do refactor
 
-83 - Refatorando as Promises
+85 - Refatorando as Promises
      16-notes-find-replace.txt
 
 Seção 24: Bônus - Swagger
 
-84 - Integrando a nossa API com o Swagger
+86 - Integrando a nossa API com o Swagger
      dependencias.txt
      17-notes-swagger.txt
 
-85 - Criando docs para a API de Login
+87 - Criando docs para a API de Login
      17-notes-swagger.txt
 
-86 - Criando componentes reutilizáveis
+88 - Criando componentes reutilizáveis
      17-notes-swagger.txt
 
-87 - Criando doc para a API de Listar Enquetes com Autenticação
+89 - Criando doc para a API de Listar Enquetes com Autenticação
      17-notes-swagger.txt
 
-88 - Criando docs para a API de SignUp
+90 - Criando docs para a API de SignUp
      17-notes-swagger.txt
 
-89 - Criando docs para a API de Criar Enquete
+91 - Criando docs para a API de Criar Enquete
      17-notes-swagger.txt
 
-90 - Criando docs para a API de Responder Enquete
+92 - Criando docs para a API de Responder Enquete
      17-notes-swagger.txt
      18-merge-feat-swagger.txt
 
 Seção 25: LoadsurveyResult API
 
-91 - Alterando o retorno do SurveyResult
+93 - Alterando o retorno do SurveyResult
      19-notes-feat-load-surey-result-pendente.txt
      ./images/19/**
 
-92 - Usando aggregation para retornar o resultado da enquete
+94 - Usando aggregation para retornar o resultado da enquete
      20-notes.aggregation.txt
      ./images/20-notes.aggregation.png
 
-93 - Aplicando o Design Pattern Builder
+95 - Aplicando o Design Pattern Builder
 
-94 - Correção no Aggregation do resultado da enquete
+96 - Correção no Aggregation do resultado da enquete
      20-notes.aggregation.txt
      todo.txt
 
-95 - Criando o LoadSurveyResult UseCase
+97 - Criando o LoadSurveyResult UseCase
 
-96 - Incluindo o LoadSurveyResultRepository ao SurveyResultMongoRepository
+98 - Incluindo o LoadSurveyResultRepository ao SurveyResultMongoRepository
 
-97 - Mudança no método de salvar resposta da enquete
+99 - Mudança no método de salvar resposta da enquete
 
-98 - Corrigindo outro bug identificado
+100 - Corrigindo outro bug identificado
 
-99 - Criando o LoadSurveyResult Controller
+101 - Criando o LoadSurveyResult Controller
 
-100 - Fazendo a composição do LoadSurveyResult
+102 - Fazendo a composição do LoadSurveyResult
       22-merge-feat-load-survey-result.txt
+
+Seção 26: Bônus
+
+103 - Migrando de Stub para Spy
+      dependencias.txt
+      23-merge-refactor-faker.txt
 
 -----------------
 URLs:
@@ -368,6 +374,7 @@ URLs:
   https://github.com/helmetjs/nocache
   https://swagger.io/docs/
   https://swagger.io/docs/specification/data-models/data-types/#numbers
+  https://www.npmjs.com/package/faker
 
 
   Badges:

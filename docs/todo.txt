@@ -28,12 +28,12 @@
    Ao invés de gravar formato string na coluna surveyId da coleção surveyresult, gravar como objectId
    
    Antes
-     secao22-aula78-01-objectid-vscode-grava-string.png
-     secao22-aula78-02-objectid-mongodb-grava-string.png
+     secao22-aula80-01-objectid-vscode-grava-string.png
+     secao22-aula80-02-objectid-mongodb-grava-string.png
 
    Depois:
-     secao22-aula78-03-objectid-vscode-grava-objectid.png
-     secao22-aula78-04-objectid-mongodb-grava-objectid.png
+     secao22-aula80-03-objectid-vscode-grava-objectid.png
+     secao22-aula80-04-objectid-mongodb-grava-objectid.png
 
  5) Checar se o surveyId (id) informado na URL /surveys/{surveyId}/results é valido.
     Simplesmente retorna 500. Pois ao converter um id inválido,
@@ -71,7 +71,7 @@
       se validar esse caso do id, verificar se poderá retornar como erro de BadRequest,
       pois só retorna Forbidden/Server Error
 
-  6)  Seção 25: LoadsurveyResult API, Aula 94 - Correção no Aggregation do resultado da enquete
+  6)  Seção 25: LoadsurveyResult API, Aula 96 - Correção no Aggregation do resultado da enquete
       query luizhp - loadBySurveyIdLuizHP - infra/db/mongodb/survey-result/survey-result-mongo-repository.ts
 
       db.surveys.aggregate([

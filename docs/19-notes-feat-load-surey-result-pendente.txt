@@ -1,4 +1,4 @@
-Seção 25: LoadsurveyResult API, Aula 91 - Alterando o retorno do SurveyResult
+Seção 25: LoadsurveyResult API, Aula 93 - Alterando o retorno do SurveyResult
 
         modified:   src/domain/models/survey-result.ts
         modified:   src/domain/models/survey.ts

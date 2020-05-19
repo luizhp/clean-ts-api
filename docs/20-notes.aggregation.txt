@@ -1,4 +1,4 @@
-Seção 25: LoadsurveyResult API, Aula 92 - Usando aggregation para retornar o resultado da enquete
+Seção 25: LoadsurveyResult API, Aula 94 - Usando aggregation para retornar o resultado da enquete
 
    images/20-notes.aggregation.png
 
@@ -91,7 +91,7 @@ Seção 25: LoadsurveyResult API, Aula 92 - Usando aggregation para retornar o r
 
 
 ----------------------------------------------------------------
-Seção 25: LoadsurveyResult API, Aula 94 - Correção no Aggregation do resultado da enquete
+Seção 25: LoadsurveyResult API, Aula 96 - Correção no Aggregation do resultado da enquete
 
    db.surveyResults.aggregate([
    {

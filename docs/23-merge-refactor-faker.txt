@@ -1,0 +1,89 @@
+└─▶ git merge refactor/spy-faker 
+Updating 4fc2107..65ae8d5
+Fast-forward
+ docs/01-02-git.txt                                                                        |  10 +--
+ docs/05-debug.txt                                                                         |   2 +-
+ docs/06-nodemon.txt                                                                       |   2 +-
+ docs/07-notes.txt                                                                         |   2 +-
+ docs/11-notes.txt                                                                         |   2 +-
+ docs/12-notes-omit-type-utility.txt                                                       |   2 +-
+ docs/16-notes-find-replace.txt                                                            |   2 +-
+ docs/19-notes-feat-load-surey-result-pendente.txt                                         |   2 +-
+ docs/20-notes.aggregation.txt                                                             |   4 +-
+ docs/conteudo.txt                                                                         | 192 ++++++++++++++++++++++---------------------
+ docs/dependencias.txt                                                                     |  41 +++++----
+ ...sign-pattern-composite.png => secao-10-aula-33-aplicando-design-pattern-composite.png} | Bin
+ ...os-imports-01.png => secao21-bonus---aula69-modularizando-os-paths-dos-imports-01.png} | Bin
+ ...os-imports-02.png => secao21-bonus---aula69-modularizando-os-paths-dos-imports-02.png} | Bin
+ ...bjectid-vscode-grava-string.png => secao22-aula80-01-objectid-vscode-grava-string.png} | Bin
+ ...ectid-mongodb-grava-string.png => secao22-aula80-02-objectid-mongodb-grava-string.png} | Bin
+ ...tid-vscode-grava-objectid.png => secao22-aula80-03-objectid-vscode-grava-objectid.png} | Bin
+ ...d-mongodb-grava-objectid.png => secao22-aula80-04-objectid-mongodb-grava-objectid.png} | Bin
+ docs/todo.txt                                                                             |  10 +--
+ package-lock.json                                                                         |   8 +-
+ package.json                                                                              |   2 +
+ readme.md                                                                                 |   7 +-
+ src/data/protocols/cryptography/decrypter.ts                                              |   2 +-
+ src/data/protocols/cryptography/encrypter.ts                                              |   2 +-
+ src/data/protocols/cryptography/hash-comparer.ts                                          |   2 +-
+ src/data/protocols/cryptography/hasher.ts                                                 |   2 +-
+ src/data/protocols/db/account/add-account-repository.ts                                   |   2 +-
+ src/data/protocols/db/survey/add-survey-repository.ts                                     |   2 +-
+ src/data/test/mock-cryptography.ts                                                        |  55 +++++++------
+ src/data/test/mock-db-account.ts                                                          |  55 +++++++------
+ src/data/test/mock-db-log.ts                                                              |  12 +--
+ src/data/test/mock-db-survey-result.ts                                                    |  25 +++---
+ src/data/test/mock-db-survey.ts                                                           |  38 +++++----
+ src/data/usecases/account/add-account/db-add-account.spec.ts                              |  73 ++++++++--------
+ src/data/usecases/account/authentication/db-authentication.spec.ts                        | 113 +++++++++++++------------
+ src/data/usecases/account/authentication/db-authentication.ts                             |   6 +-
+ src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts          |  75 +++++++++--------
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts          |  71 +++++++++-------
+ src/data/usecases/survey-result/save-survey-result/db-save-survey-result.spec.ts          |  44 +++++-----
+ src/data/usecases/survey/add-survey/db-add-survey.spec.ts                                 |  20 ++---
+ src/data/usecases/survey/load-survey-by-id/db-load-survey-by-id.spec.ts                   |  39 +++++----
+ src/data/usecases/survey/load-surveys/db-load-surveys.spec.ts                             |  26 +++---
+ src/domain/test/mock-account.ts                                                           |  20 +++--
+ src/domain/test/mock-survey-result.ts                                                     |  37 ++++++---
+ src/domain/test/mock-survey.ts                                                            |  54 +++++-------
+ src/domain/usecases/account/authentication.ts                                             |   2 +-
+ src/infra/cryptography/bcrypt-adapter/bcrypt-adapter.ts                                   |  10 +--
+ src/infra/cryptography/jwt-adapter/jwt-adapter.ts                                         |  12 +--
+ src/infra/db/mongodb/account/account-mongo-repository.spec.ts                             | 125 ++++++++++++++--------------
+ src/infra/db/mongodb/account/account-mongo-repository.ts                                  |   4 +-
+ src/infra/db/mongodb/helpers/mongo-helper.ts                                              |   4 +-
+ src/infra/db/mongodb/helpers/query-builder.ts                                             |  39 ++++-----
+ src/infra/db/mongodb/log/log-mongo-repository.spec.ts                                     |   5 +-
+ src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts                 |  35 ++------
+ src/infra/db/mongodb/survey/survey-mongo-repository.spec.ts                               |  42 ++--------
+ src/infra/db/mongodb/survey/survey-mongo-repository.ts                                    |   4 +-
+ src/infra/validators/email-validator-adapter.spec.ts                                      |   2 +-
+ src/main/decorators/log-controller-decorator.spec.ts                                      |  68 +++++++--------
+ src/main/factories/controllers/login/login/login-validation-factory.spec.ts               |   4 +-
+ src/main/factories/controllers/login/signup/signup-validation-factory.spec.ts             |   4 +-
+ src/presentation/controllers/login/login/login-controller.spec.ts                         |  61 +++++++-------
+ src/presentation/controllers/login/signup/signup-controller.spec.ts                       |  96 +++++++++++-----------
+ .../controllers/survey-result/load-survey-result/load-survey-result-controller.spec.ts    |  55 +++++++------
+ .../controllers/survey-result/save-survey-result/save-survey-result-controller.spec.ts    |  85 +++++++++----------
+ src/presentation/controllers/survey/add-survey/add-survery-controller.spec.ts             |  45 +++++-----
+ src/presentation/controllers/survey/load-surveys/load-surveys-controller.spec.ts          |  30 ++++---
+ src/presentation/middlewares/auth-middleware.spec.ts                                      |  44 +++++-----
+ src/presentation/test/index.ts                                                            |   2 +-
+ src/presentation/test/mock-account.ts                                                     |  42 ++++++----
+ src/presentation/test/mock-survey-result.ts                                               |  26 +++---
+ src/presentation/test/mock-survey.ts                                                      |  38 +++++----
+ src/presentation/test/mock-validation.ts                                                  |  13 +--
+ src/validation/test/index.ts                                                              |   1 -
+ src/validation/test/mock-email-validator.ts                                               |  13 +--
+ src/validation/validators/compare-fields-validation.spec.ts                               |  21 +++--
+ src/validation/validators/email-validation.spec.ts                                        |  38 +++++----
+ src/validation/validators/required-field-validation.spec.ts                               |  11 ++-
+ src/validation/validators/validation-composite.spec.ts                                    |  40 ++++-----
+ 78 files changed, 1054 insertions(+), 1030 deletions(-)
+ rename docs/images/{secao-10-aula-29-aplicando-design-pattern-composite.png => secao-10-aula-33-aplicando-design-pattern-composite.png} (100%)
+ rename docs/images/{secao21-bonus---aula66-modularizando-os-paths-dos-imports-01.png => secao21-bonus---aula69-modularizando-os-paths-dos-imports-01.png} (100%)
+ rename docs/images/{secao21-bonus---aula66-modularizando-os-paths-dos-imports-02.png => secao21-bonus---aula69-modularizando-os-paths-dos-imports-02.png} (100%)
+ rename docs/images/{secao22-aula78-01-objectid-vscode-grava-string.png => secao22-aula80-01-objectid-vscode-grava-string.png} (100%)
+ rename docs/images/{secao22-aula78-02-objectid-mongodb-grava-string.png => secao22-aula80-02-objectid-mongodb-grava-string.png} (100%)
+ rename docs/images/{secao22-aula78-03-objectid-vscode-grava-objectid.png => secao22-aula80-03-objectid-vscode-grava-objectid.png} (100%)
+ rename docs/images/{secao22-aula78-04-objectid-mongodb-grava-objectid.png => secao22-aula80-04-objectid-mongodb-grava-objectid.png} (100%)

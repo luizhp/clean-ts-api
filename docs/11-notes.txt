@@ -1,4 +1,4 @@
-Seção 21: Bônus, Aula 68 - Utilizando Type alias
+Seção 21: Bônus, Aula 70 - Utilizando Type alias
 
    Diferenças entre TYPE e INTERFACE
    https://stackoverflow.com/a/52682220/5604238

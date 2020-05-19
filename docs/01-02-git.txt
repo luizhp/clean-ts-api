@@ -76,7 +76,7 @@ ou adicionar arquivo/modificação em commit anterior
 git stash
 
   Seção 7 - SingUp API - Infra Layer
-  Aula 18 - Configurando MongoDb em Memória
+  Aula 20 - Configurando MongoDb em Memória
   19:51
   (https://www.udemy.com/course/tdd-com-mango/learn/lecture/17717494#questions)
 
@@ -102,7 +102,7 @@ Now commit again, you can even re-use the same commit message:
   git commit -c ORIG_HEAD --no-edit
 
 -------------------
-Seção 9: Bônus - Aula 28 - Criando Tag e fazendo Push para o GitHub
+Seção 9: Bônus - Aula 30 - Criando Tag e fazendo Push para o GitHub
 
 GIT TAGs
   https://git-scm.com/book/en/v2/Git-Basics-Tagging
@@ -138,7 +138,7 @@ GIT TAGs
     . faz push
 
 -------------------
-Seção 14: Login API - Main Layer - Aula: 42 - Fazendo a composição do Login
+Seção 14: Login API - Main Layer - Aula: 44 - Fazendo a composição do Login
 
    - na branch feat/login, efetuar o último commit
    - foi dado git push origin feat/login e atualizada a branch remotamente
@@ -176,13 +176,13 @@ Como fazer um commit e movê-lo para o passado:
        A -- D -- B -- C
 
 -----------------------------
-Seção 20: LoadSurveys API, Aula 63 - Criando o LoadSurveysController
+Seção 20: LoadSurveys API, Aula 65 - Criando o LoadSurveysController
 
   27:19 - remover arquivos que estão UNTRACKED (que não foram para git add ou commit)
           git clean -df
 
 -----------------------------
-Seção 21: Bônus, Aula 68 - Utilizando Type alias
+Seção 21: Bônus, Aula 70 - Utilizando Type alias
 
   00:00~05:08 - voltando ao git anterior
 
