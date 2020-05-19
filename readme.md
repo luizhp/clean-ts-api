@@ -19,7 +19,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 
 ## [**Link para a documentação da API**](http://fordevs.herokuapp.com/api-docs)
 
-> ## APIs previstas para esse treinamento
+> ## APIs construídas no treinamento
 
 1. [Cadastro](./requirements/signup.md)
 2. [Login](./requirements/login.md)
@@ -77,9 +77,10 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * MongoDb
 * Travis CI
 * Swagger
-* Coveralls
 * Bcrypt
 * JsonWebToken
+* Faker
+* Coveralls
 * Validator
 * Express
 * Supertest
@@ -132,9 +133,11 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Testes Unitários
 * Testes de Integração
 * Cobertura de Testes
+* Test Doubles
 * Mocks
 * Stubs
 * Spies
+* Fakes
 
 > ## Features do MongoDb
 
