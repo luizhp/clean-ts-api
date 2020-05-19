@@ -26,6 +26,8 @@ Seção 2: Bônus
 
 07 - Problema identificado em biblioteca
 
+08 - Corrigindo problema em biblioteca
+
 Seção 3: SignUp API - Presentation Layer
 
 10 - Criando o SignUpController e validando o request
