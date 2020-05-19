@@ -28,6 +28,8 @@ Seção 2: Bônus
 
 08 - Corrigindo problema em biblioteca
 
+09 - Corrigido problema com coverage do Jest
+
 Seção 3: SignUp API - Presentation Layer
 
 10 - Criando o SignUpController e validando o request
