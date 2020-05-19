@@ -29,6 +29,7 @@ Seção 2: Bônus
 08 - Corrigindo problema em biblioteca
 
 09 - Corrigido problema com coverage do Jest
+     24-merge-refactor-eslint-update.txt
 
 Seção 3: SignUp API - Presentation Layer
 
