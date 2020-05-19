@@ -1,2 +1,2 @@
-export * from '@/domain/usecases/account/authentication'
-export * from '@/presentation/protocols'
+export { Authentication } from '@/domain/usecases/account/authentication'
+export { Controller, HttpRequest, HttpResponse, Validation } from '@/presentation/protocols'

@@ -1,4 +1,3 @@
-export * from '@/domain/models/account'
-export * from '@/domain/usecases/account/add-account'
-export * from '@/domain/usecases/account/authentication'
-export * from '@/presentation/protocols'
+export { AddAccount } from '@/domain/usecases/account/add-account'
+export { Authentication } from '@/domain/usecases/account/authentication'
+export { HttpResponse, HttpRequest, Controller, Validation } from '@/presentation/protocols'
