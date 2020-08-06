@@ -340,6 +340,9 @@ Seção 26: Bônus
       dependencias.txt
       25-notes.txt
 
+105 - Ajuste na autenticação para retornar mais dados
+      26-merge-feat-auth.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats

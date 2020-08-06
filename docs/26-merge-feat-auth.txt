@@ -1,0 +1,15 @@
+Updating cf97914..54f327e
+Fast-forward
+ src/data/usecases/account/authentication/db-authentication-protocols.ts |  1 +
+ src/data/usecases/account/authentication/db-authentication.spec.ts      | 15 ++++++++-------
+ src/data/usecases/account/authentication/db-authentication.ts           |  8 ++++++--
+ src/domain/models/authentication.ts                                     |  4 ++++
+ src/domain/usecases/account/authentication.ts                           |  4 +++-
+ src/main/docs/schemas/account-schema.ts                                 |  6 +++++-
+ src/presentation/controllers/login/login/login-controller.spec.ts       |  4 ++--
+ src/presentation/controllers/login/login/login-controller.ts            |  6 +++---
+ src/presentation/controllers/login/signup/signup-controller.spec.ts     |  2 +-
+ src/presentation/controllers/login/signup/signup-controller.ts          |  4 ++--
+ src/presentation/test/mock-account.ts                                   | 10 +++++++---
+ 11 files changed, 42 insertions(+), 22 deletions(-)
+ create mode 100644 src/domain/models/authentication.ts
