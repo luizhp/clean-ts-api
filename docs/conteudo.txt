@@ -343,6 +343,9 @@ Seção 26: Bônus
 105 - Ajuste na autenticação para retornar mais dados
       26-merge-feat-auth.txt
 
+106 - Ajuste na listagem de enquetes
+      27-merge-feat-load-surveys.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
