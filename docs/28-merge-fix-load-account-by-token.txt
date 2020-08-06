@@ -1,0 +1,6 @@
+└─▶ git merge fix/load-account-by-token
+Updating 0fbf1fb..fda832c
+Fast-forward
+ src/data/usecases/account/load-account-by-token/db-load-account-by-token.spec.ts | 4 ++--
+ src/data/usecases/account/load-account-by-token/db-load-account-by-token.ts      | 7 ++++++-
+ 2 files changed, 8 insertions(+), 3 deletions(-)

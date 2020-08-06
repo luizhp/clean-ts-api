@@ -346,6 +346,9 @@ Seção 26: Bônus
 106 - Ajuste na listagem de enquetes
       27-merge-feat-load-surveys.txt
 
+107 - Ajuste no DbLoadAccountByToken
+      28-merge-fix-load-account-by-token.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
