@@ -1,6 +1,6 @@
 {
   "name": "clean-ts-api",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "NodeJs Rest API using TDD, Clean Architecture and Typescript",
   "keywords": [],
   "homepage": "https://github.com/luizhp/clean-ts-api",
