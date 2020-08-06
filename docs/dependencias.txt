@@ -588,3 +588,11 @@ Seção 26: Bônus, Aula: 104 - Servindo arquivos estáticos
 
     npm install -D copyfiles
 
+***********************************************
+Seção 26: Bônus, Aula: 108 - Ajuste no SurveyResult
+
+ 1) mongo-round (Somente para mongo abaixo da versão 4.2)
+    https://www.npmjs.com/package/mongo-round
+    https://github.com/debitoor/mongo-round
+
+    npm install mongo-round

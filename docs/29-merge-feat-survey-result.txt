@@ -1,0 +1,22 @@
+└─▶ git merge feat/survey-result 
+Updating 1c1a114..af4fb05
+Fast-forward
+ globalConfig.json                                                                |    1 +
+ package-lock.json                                                                | 2994 +++++++++++++++++---------------------
+ package.json                                                                     |   15 +-
+ src/data/protocols/db/survey-result/load-survey-result-repository.ts             |    2 +-
+ src/data/test/mock-db-survey-result.ts                                           |    4 +-
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result.spec.ts |   18 +-
+ src/data/usecases/survey-result/load-survey-result/db-load-survey-result.ts      |    7 +-
+ src/data/usecases/survey-result/save-survey-result/db-save-survey-result.ts      |    2 +-
+ src/domain/models/survey-result.ts                                               |    1 +
+ src/domain/test/mock-survey-result.ts                                            |   12 +-
+ src/domain/usecases/survey-result/load-survey-result.ts                          |    2 +-
+ src/infra/db/mongodb/survey-result/survey-result-mongo-repository.spec.ts        |   73 +-
+ src/infra/db/mongodb/survey-result/survey-result-mongo-repository.ts             |   19 +-
+ src/main/docs/schemas/survey-result-answer-schema.ts                             |    5 +-
+ .../survey-result/load-survey-result/load-survey-result-controller.spec.ts       |    4 +-
+ .../survey-result/load-survey-result/load-survey-result-controller.ts            |    2 +-
+ src/presentation/test/mock-survey-result.ts                                      |    4 +-
+ 17 files changed, 1432 insertions(+), 1733 deletions(-)
+ create mode 100644 globalConfig.json

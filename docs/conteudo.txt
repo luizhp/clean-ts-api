@@ -350,6 +350,10 @@ Seção 26: Bônus
       28-merge-fix-load-account-by-token.txt
       01-02-git.txt
 
+108 - Ajuste no SurveyResult
+      dependencias.txt
+      29-merge-feat-survey-result.txt
+
 -----------------
 URLs:
   https://git-scm.com/docs/pretty-formats
