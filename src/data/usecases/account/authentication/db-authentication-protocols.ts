@@ -1,3 +1,4 @@
+export { AuthenticationModel } from '@/domain/models/authentication'
 export { Authentication, AuthenticationParams } from '@/domain/usecases/account/authentication'
 export { LoadAccountByEmailRepository } from '@/data/protocols/db/account/load-account-by-email-repository'
 export { UpdateAccessTokenRepository } from '@/data/protocols/db/account/update-access-token-repository'
