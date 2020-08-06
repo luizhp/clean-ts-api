@@ -14,7 +14,10 @@ export const surveyResultAnswerSchema = {
     percent: {
       type: 'number',
       format: 'double'
+    },
+    isCurrentAccountAnswer: {
+      type: 'boolean'
     }
   },
-  required: ['answer', 'count', 'percent']
+  required: ['answer', 'count', 'percent', 'isCurrentAccountAnswer']
 }
