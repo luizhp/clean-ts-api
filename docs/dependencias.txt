@@ -6,9 +6,21 @@ npm init -y
 
 1) Padronização de commits:
 
+(https://udacity.github.io/git-styleguide/)
 https://www.conventionalcommits.org
 A especificação do Conventional Commits é uma convenção simples para utilizar nas mensagens de commit.
 Ela define um conjunto de regras para criar um histórico de commit explícito, o que facilita a criação de ferramentas automatizadas.
+
+  The Type
+  The type is contained within the title and can be one of these types:
+
+  feat: a new feature
+  fix: a bug fix
+  docs: changes to documentation
+  style: formatting, missing semi colons, etc; no code change
+  refactor: refactoring production code
+  test: adding tests, refactoring test; no production code change
+  chore: updating build tasks, package manager configs, etc; no production code change
 
 https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
 We have very precise rules over how our git commit messages can be formatted.
